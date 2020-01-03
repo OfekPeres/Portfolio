@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* background-color: #8bbf9f;  pretty green*/
+}
+html {
+  background-color: #eff9f0;
+}
+
+/* for some reason this makes a floating box appear with the 
+grid card element that the screen is currently seeing */
+/* .element-active-on-screen {
+  position: fixed;
+  display: flex;
+  width: 350px;
+  height: 350px;
+  right: 30px;
+  bottom: 30px;
+  color: black;
+  z-index: 100;
+  opacity: 1;
+} */
