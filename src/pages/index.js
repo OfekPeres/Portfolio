@@ -6,7 +6,7 @@ import { animateScroll as scroll, scrollSpy, Events } from "react-scroll"
 
 import GlobalLayout from "../components/global_layout"
 import "../styles/main.css"
-
+import "../styles/burgermenu.css"
 import ProjectGrid from "../components/projectgrid"
 import SarrArticle from "../articles/sarr"
 import MotionPlanningArticle from "../articles/motionplanning"
@@ -15,11 +15,33 @@ import PendulumArticle from "../articles/pendulum"
 import CraneArticle from "../articles/crane"
 import BenchPressArticle from "../articles/benchpress"
 
+import HeaderBar from "../components/header"
+
+import SideBar from "../components/sidebar"
+
 const Main = styled.main``
+const currentPage = { name: "Projects", link: "/Projects" }
+const initialState = { menuOpen: false }
 
 const Page = () => {
-  function scrollToTop() {
+  const [state, setState] = useState(initialState)
+
+  const scrollToTop = () => {
     scroll.scrollToTop()
+  }
+  const handleStateChange = state => {
+    setState({ ...state, menuOpen: state.isOpen })
+  }
+  const closeMenu = () => {
+    setState({ ...state, menuOpen: false })
+  }
+
+  const isMenuOpen = () => {
+    return state.menuOpen
+  }
+  const toggleMenu = () => {
+    // console.log(state)
+    setState({ ...state, menuOpen: !state.menuOpen })
   }
 
   useEffect(() => {
@@ -40,13 +62,24 @@ const Page = () => {
   })
 
   return (
-    <GlobalLayout>
+    <GlobalLayout id="outer-container">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Ofek's Website</title>
+      </Helmet>
+      <SideBar
+        isOpen={state.menuOpen}
+        handleStateChange={handleStateChange}
+        closeMenu={closeMenu}
+        state={state}
+      ></SideBar>
       <Main id="main-content">
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>Ofek's Website</title>
-        </Helmet>
-        <div className="element-active-on-screen"></div>
+        <HeaderBar
+          currentPage={currentPage}
+          toggleMenu={toggleMenu}
+          menuOpen={state.menuOpen}
+        ></HeaderBar>
+
         <ProjectGrid></ProjectGrid>
         <SarrArticle></SarrArticle>
         <MotionPlanningArticle></MotionPlanningArticle>
