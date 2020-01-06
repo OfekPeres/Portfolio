@@ -8,7 +8,6 @@ import amazon_logo from "../Images_and_Videos/Amazon/amazon_logo.png"
 
 import water_droplet from "../Images_and_Videos/Fluids/WaterDroplet.jpg"
 
-
 const amazonData = {
   title: "Amazon Web Services",
   paragraphs: ["Certified Solutions Architect - Associate"],
@@ -33,6 +32,7 @@ const Welcome = styled.h2`
   justify-self: center;
   font-family: "Alegreya", serif;
   font-weight: normal;
+  text-align: center;
 `
 
 const ProjectGrid = ({ inputs }) => {

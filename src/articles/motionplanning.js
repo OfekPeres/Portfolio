@@ -187,6 +187,7 @@ const motionPlanningArticle = {
       {
         type: "Video",
         video: particleFilterVideo,
+        loop: true,
       },
       {
         type: "SectionEntry",

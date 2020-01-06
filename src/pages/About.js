@@ -10,7 +10,7 @@ import SideBar from "../components/sidebar"
 
 import AboutBody from "../articles/aboutpage"
 import Logo from "../components/logo"
-
+import UpArrow from "../components/upArrow"
 const Main = styled.main``
 const currentPage = { name: "About", link: "/About" }
 const initialState = { menuOpen: false }
@@ -70,6 +70,7 @@ const Page = () => {
         ></HeaderBar>
         <AboutBody></AboutBody>
         <Logo></Logo>
+        <UpArrow onClick={scrollToTop}></UpArrow>
         <Footer></Footer>
       </Main>
     </GlobalLayout>

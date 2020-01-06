@@ -1,40 +1,33 @@
 import React from "react"
 import styled from "styled-components"
 
-const StyledButtonContainer = styled.div`
+import upArrowImage from "../Images_and_Videos/ArrowImages/arrow.png"
+
+const StyledButtonContainer = styled.button`
   position: fixed;
-  right: 20px;
-  bottom: 50px;
+  right: 3%;
+  bottom: 3%;
   z-index: 11;
+  display: flex;
+  justify-content: flex-end;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  max-width: 50px;
+  max-height: 50px;
+
+  width: 8%;
 `
 
-const UpArrow = styled.span`
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-
-  border-bottom: 15px solid black;
-
-  /* position: absolute; */
-  /* right: 10px;
-  bottom: 40px; */
-`
-const Rectangle = styled.span`
-  position: absolute;
-
-  border-left: 3px solid;
-  border-right: 3px solid;
-  border-top: 15px solid;
-  border-bottom: 15px solid;
-  right: 22px;
-  bottom: 12px;
-`
 const Arrow = ({ onClick }) => {
   return (
     <StyledButtonContainer onClick={onClick}>
-      <UpArrow></UpArrow>
-      {/* <Rectangle></Rectangle> */}
+      <img
+        src={upArrowImage}
+        alt="An up Arrow for navigation"
+        width="100%"
+      ></img>
     </StyledButtonContainer>
   )
 }

@@ -138,11 +138,17 @@ const ImageStyle = styled.div`
   /* align-self: ${({ align }) => (align !== null ? align : "start")}; */
   /* display:flex; */
   /* justify-self:center; */
-  image-orientation: from-image;
+  /* image-orientation: from-image; */
   padding: 1em 0;
   display: flex;
   justify-content: center;
   /* align-items: center; */
+  height:100%;
+  /* width:100%; */
+  align-items:flex-start;
+
+  transform: ${({ right }) => (right ? "rotate(90deg)" : "none")};
+
   
 `
 const BeforeCraneCaption = styled.h4`
@@ -159,13 +165,14 @@ const BeforeCraneCaption = styled.h4`
 const AfterCraneCaption = styled.h4`
   grid-column: 2;
   grid-row: 9;
-  padding-right: 5vw;
-  writing-mode: sideways-lr;
-  text-orientation: mixed;
+  /* padding-right: 5vw; */
+  /* writing-mode: sideways-lr;
+  text-orientation: mixed; */
   font-family: "Abril Fatface", serif;
   font-size: calc(5px + 6vw);
   justify-self: flex-end;
   align-self: center;
+  transform: rotate(-90deg);
 `
 const CraneCaptionStyle = styled.div`
   grid-column: 2;
@@ -181,8 +188,8 @@ const CraneImageCaption = ({ image, alt, caption, side }) => {
     return (
       <CraneCaptionStyle>
         <AfterCraneCaption>{caption}</AfterCraneCaption>
-        <ImageStyle>
-          <img src={image} alt={alt} width="70%"></img>
+        <ImageStyle right>
+          <img src={image} alt={alt} width="95%"></img>
         </ImageStyle>
       </CraneCaptionStyle>
     )
@@ -249,7 +256,7 @@ const VideoCaption = styled.h3`
   padding-bottom: 0.5em;
 `
 
-const Video = ({ video, poster, rowStart }) => {
+const Video = ({ video, poster, rowStart, loop }) => {
   return (
     <VideoContainer rowStart={rowStart}>
       <VideoAspectRatioContainer>
@@ -262,7 +269,7 @@ const Video = ({ video, poster, rowStart }) => {
             controls
             // muted
             playsInline
-            loop="auto"
+            loop={loop}
           ></video>
         </VideoItem>
       </VideoAspectRatioContainer>
@@ -435,6 +442,7 @@ const Article = ({ metadata, SectionHeaderData, ArticleBodyData }) => {
                 rowStart={index + 2}
                 video={entry.video}
                 poster={entry.poster}
+                loop={entry.loop}
               ></Video>
             )
           }
@@ -479,5 +487,4 @@ const Article = ({ metadata, SectionHeaderData, ArticleBodyData }) => {
   )
 }
 
-// export { Image }
 export default Article

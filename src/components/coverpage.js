@@ -18,9 +18,10 @@ const SpaceshipContainer = styled.div`
   /* min-width: 300px; */
   background: transparent;
   transform: translateY(-38px) rotate(45deg);
+  width: 100%;
 
   @media screen and (max-width: 1050px) {
-    grid-column: 2 / 4;
+    /* grid-column: 2 / 4; */
     transform: none;
     height: 80%;
   }

@@ -13,6 +13,11 @@ const Name = styled(Link)`
     grid-column: 1 / -1;
   }
   color: #fcf7ff;
+  cursor: pointer;
+  z-index: 10;
+  :hover {
+    color: skyblue;
+  }
 `
 
 const BlurbAboutMe = styled.h2`
@@ -20,7 +25,6 @@ const BlurbAboutMe = styled.h2`
   font-size: calc(1.5vw + 15px);
   grid-row: 2;
   grid-column: 2 / 4;
-
   color: #fcf7ff;
 `
 const AboutMe = styled.p`
@@ -42,7 +46,8 @@ const StyledGatsbyLink = styled(Link)`
   text-decoration: none;
   grid-row: 4;
   grid-column: ${({ column }) => column};
-
+  cursor: pointer;
+  z-index: 10;
   :hover {
     color: skyblue;
   }

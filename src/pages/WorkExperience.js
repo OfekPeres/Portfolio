@@ -15,8 +15,7 @@ import HeaderBar from "../components/header"
 import Footer from "../components/footer"
 import SideBar from "../components/sidebar"
 import Logo from "../components/logo"
-
-// import UpArrow from "../components/upArrow"
+import UpArrow from "../components/upArrow"
 
 const Main = styled.main``
 const currentPage = { name: "Work Experience", link: "/WorkExperience" }
@@ -79,6 +78,7 @@ const Page = () => {
         <WorkGrid></WorkGrid>
         <AmazonArticle></AmazonArticle>
         <FluidsArticle></FluidsArticle>
+        <UpArrow onClick={scrollToTop}></UpArrow>
         <Logo></Logo>
         <Footer></Footer>
       </Main>

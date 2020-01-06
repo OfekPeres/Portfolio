@@ -40,6 +40,7 @@ const fluidsArticle = {
         type: "Image",
         image: rheometer,
         alt: "A Rheometer",
+        width: "50%",
       },
       {
         type: "SectionEntry",

@@ -79,6 +79,7 @@ const Welcome = styled.h2`
   justify-self: center;
   font-family: "Alegreya", serif;
   font-weight: normal;
+  text-align: center;
 `
 const ProjectGrid = ({ inputs }) => {
   const output = inputs.map(

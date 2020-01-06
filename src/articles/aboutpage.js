@@ -18,6 +18,7 @@ const PageTitle = styled.h1`
   text-align: center;
   grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "auto")};
   padding-bottom: 5%;
+  justify-content: center;
 `
 
 const SubTitle = styled.h2`
@@ -58,10 +59,11 @@ const StyledURL = styled.a`
   :hover {
     color: skyblue;
   }
+  height: 100%;
 
   color: inherit;
   display: flex;
-  justify-items: ${({ align }) => (align !== null ? align : "center")};
+  justify-items: ${({ align }) => (align !== null ? align : "flex-start")};
   position: relative;
   top: -15px;
 `
@@ -69,37 +71,56 @@ const ImageStyle = styled.div`
   grid-column: 2;
   grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "-1")};
   justify-self: ${({ align }) => (align !== null ? align : "start")};
-  /* align-self: ${({ align }) => (align !== null ? align : "start")}; */
-  /* display:flex; */
-  /* justify-self:center; */
+
   image-orientation: from-image;
   padding: 1em 0;
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  
+  justify-content: left;
 `
-const Image = ({ image, alt, width, align, rowStart }) => {
+const Image = ({ image, alt, width, align, rowStart, height }) => {
   if (width == null) {
     width = "100%"
   }
+  if (height == null) {
+    height = "100%"
+  }
   return (
     <ImageStyle align={align} rowStart={rowStart}>
-      <img src={image} alt={alt} width={width}></img>
+      <img src={image} alt={alt} width={width} height={height}></img>
     </ImageStyle>
   )
 }
-const LinkedLogo = ({ logo, to, alt, align, width, rowStart }) => {
+const LinkContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  /* max-width: 300px; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "-1")};
+`
+const LinkedLogo = ({ logo, to, alt, align, width, rowStart, height }) => {
   return (
-    <StyledURL target="_blank" href={to} rowStart={rowStart}>
-      <Image image={logo} alt={alt} align={align} width={width}></Image>
-    </StyledURL>
+    <LinkContainer rowStart={rowStart}>
+      <StyledURL target="_blank" href={to} rowStart={rowStart}>
+        <Image
+          image={logo}
+          alt={alt}
+          align={align}
+          width={width}
+          // height={height}
+        ></Image>
+      </StyledURL>
+    </LinkContainer>
   )
 }
 
 const FadeInContainer = styled.div`
   grid-column: 2;
-  justify-self: ${({ align }) => (align !== null ? align : "start")};
+  justify-self: ${({ align }) => (align !== null ? align : "flex-start")};
+  display: grid;
+  justify-content: left;
+  align-items: left;
 `
 
 const FadeInSection = props => {
@@ -125,7 +146,7 @@ const FadeInSection = props => {
 }
 
 const aboutData = [
-  { type: "PageTitle", text: "About Me" },
+  { type: "PageTitle", text: "About Me", align: "center" },
   { type: "SubTitle", text: "Academics" },
   {
     type: "Paragraph",
@@ -160,6 +181,7 @@ const aboutData = [
     alt: "LinkedIn logo",
     align: "center",
     width: "50%",
+    height: "100%",
   },
   { type: "SectionBreak" },
   { type: "SubTitle", text: "Hobbies" },
@@ -193,7 +215,8 @@ const aboutData = [
     type: "LinkedLogo",
     logo: GitHubLogo,
     alt: "GitHub Logo",
-    width: "75px",
+    width: "50%",
+    // height: "100%",
     to: "https://github.com/OfekPeres",
     align: "left",
   },
@@ -210,7 +233,7 @@ const About = ({ pageInputs }) => {
   const entries = pageInputs.map((entry, index) => {
     if (entry.type === "PageTitle") {
       return (
-        <FadeInSection>
+        <FadeInSection align={entry.align}>
           <PageTitle rowStart={index + 1}>{entry.text}</PageTitle>
         </FadeInSection>
       )
@@ -242,7 +265,7 @@ const About = ({ pageInputs }) => {
 
     if (entry.type === "LinkedLogo") {
       return (
-        <FadeInSection>
+        <FadeInSection align={"flex-start"}>
           <LinkedLogo
             rowStart={index + 1}
             logo={entry.logo}
@@ -250,6 +273,7 @@ const About = ({ pageInputs }) => {
             to={entry.to}
             align={entry.align}
             width={entry.width}
+            height={entry.height}
           ></LinkedLogo>
         </FadeInSection>
       )

@@ -9,7 +9,7 @@ const LogoContainer = styled.div`
   justify-self: center;
   align-self: center;
   max-width: 400px;
-  width: 50%;
+  width: 60%;
 `
 const Logo = () => {
   return (
