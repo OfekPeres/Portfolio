@@ -3,7 +3,7 @@ import Article from "./article"
 
 import QRTracking_drone from "../Images_and_Videos/Thesis/QRTracking_Drone.mp4"
 import QRTracking_human from "../Images_and_Videos/Thesis/QRTracking_human.mp4"
-
+import gears from "../Images_and_Videos/Backgrounds/gears.png"
 const thesisArticle = {
   metadata: {
     backgroundColor: "#262626",
@@ -64,6 +64,24 @@ const thesisArticle = {
       { type: "VideoCaption", text: "Human Drone POV" },
       { type: "Video", video: QRTracking_human },
       { type: "SectionBreak", color: "#FCF7FF" },
+      {
+        type: "VariableGridContainer",
+        left: 1,
+        right: 2,
+        top: 1,
+        bot: 5,
+        image: gears,
+        alt: "Gears",
+      },
+      {
+        type: "VariableGridContainer",
+        left: 3,
+        right: 3,
+        top: 7,
+        bot: 12,
+        image: gears,
+        alt: "Gears",
+      },
     ],
   },
 }

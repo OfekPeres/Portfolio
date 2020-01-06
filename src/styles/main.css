@@ -22,3 +22,10 @@ grid card element that the screen is currently seeing */
   z-index: 100;
   opacity: 1;
 } */
+
+/* Turn gears off when screen is too small  */
+@media screen and (max-width: 600px) {
+  .gears {
+    display: none;
+  }
+}

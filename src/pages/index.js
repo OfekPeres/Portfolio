@@ -1,94 +1,56 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
-import { animateScroll as scroll, scrollSpy, Events } from "react-scroll"
-
-import GlobalLayout from "../components/global_layout"
+import OfekParticles from "../components/Particles"
+import {
+  SpaceShip,
+  Nudge,
+  Astronaut,
+  Earth,
+  CoverPageTitle,
+} from "../components/coverpage"
 import "../styles/main.css"
-import "../styles/burgermenu.css"
-import ProjectGrid from "../components/projectgrid"
-import SarrArticle from "../articles/sarr"
-import MotionPlanningArticle from "../articles/motionplanning"
-import ThesisArticle from "../articles/thesis"
-import PendulumArticle from "../articles/pendulum"
-import CraneArticle from "../articles/crane"
-import BenchPressArticle from "../articles/benchpress"
 
-import HeaderBar from "../components/header"
+import HomePageIntro from "../articles/homepage_intro"
 
-import SideBar from "../components/sidebar"
+const Main = styled.main`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+`
 
-const Main = styled.main``
-const currentPage = { name: "Projects", link: "/Projects" }
-const initialState = { menuOpen: false }
+const Intro = styled.article`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+  grid-gap: 10px;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+  }
+`
 
 const Page = () => {
-  const [state, setState] = useState(initialState)
-
-  const scrollToTop = () => {
-    scroll.scrollToTop()
-  }
-  const handleStateChange = state => {
-    setState({ ...state, menuOpen: state.isOpen })
-  }
-  const closeMenu = () => {
-    setState({ ...state, menuOpen: false })
-  }
-
-  const isMenuOpen = () => {
-    return state.menuOpen
-  }
-  const toggleMenu = () => {
-    // console.log(state)
-    setState({ ...state, menuOpen: !state.menuOpen })
-  }
-
-  useEffect(() => {
-    Events.scrollEvent.register("begin", function(to, element) {
-      // console.log("begin", arguments)
-    })
-
-    Events.scrollEvent.register("end", function(to, element) {
-      // console.log("end", arguments)
-    })
-
-    scrollSpy.update()
-
-    return () => {
-      Events.scrollEvent.remove("begin")
-      Events.scrollEvent.remove("end")
-    }
-  })
-
   return (
-    <GlobalLayout id="outer-container">
+    <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Ofek's Website</title>
+        <title>Ofek's Website - Home</title>
       </Helmet>
-      <SideBar
-        isOpen={state.menuOpen}
-        handleStateChange={handleStateChange}
-        closeMenu={closeMenu}
-        state={state}
-      ></SideBar>
-      <Main id="main-content">
-        <HeaderBar
-          currentPage={currentPage}
-          toggleMenu={toggleMenu}
-          menuOpen={state.menuOpen}
-        ></HeaderBar>
 
-        <ProjectGrid></ProjectGrid>
-        <SarrArticle></SarrArticle>
-        <MotionPlanningArticle></MotionPlanningArticle>
-        <ThesisArticle></ThesisArticle>
-        <PendulumArticle></PendulumArticle>
-        <CraneArticle></CraneArticle>
-        <BenchPressArticle></BenchPressArticle>
+      <Main>
+        <CoverPageTitle className="loading">Launching...</CoverPageTitle>
+        <Nudge>Learn More Below!</Nudge>
+
+        <OfekParticles simple={false}></OfekParticles>
+        <SpaceShip></SpaceShip>
+        <Astronaut></Astronaut>
+        <Earth></Earth>
       </Main>
-    </GlobalLayout>
+      <Intro>
+        <OfekParticles simple></OfekParticles>
+        <HomePageIntro></HomePageIntro>
+      </Intro>
+    </div>
   )
 }
 

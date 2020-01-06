@@ -27,7 +27,7 @@ const craneArticle = {
         alt: "The CAD model for our crane.",
       },
 
-      { type: "SectionBreak", color: "#FCF7FF" },
+      { type: "SectionBreak" },
       {
         type: "SectionEntry",
         text:

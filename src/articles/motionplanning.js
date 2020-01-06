@@ -8,6 +8,11 @@ import particleFilterVideo from "../Images_and_Videos/Robotics/particle_filter.m
 import ObstacleAvoidance_behind from "../Images_and_Videos/Robotics/ObstacleAvoidancePOV_behind.mp4"
 import ObstacleAvoidance_side from "../Images_and_Videos/Robotics/ObstacleAvoidance_side.mp4"
 
+import gear_black from "../Images_and_Videos/Backgrounds/gear-black.png"
+import gear_white from "../Images_and_Videos/Backgrounds/gear-white-big.png"
+import gear_white_small from "../Images_and_Videos/Backgrounds/gear-white-small.png"
+import gear_black_big from "../Images_and_Videos/Backgrounds/gear-black-big.png"
+
 const motionPlanningArticle = {
   metadata: {
     backgroundColor: "#B6F1E8",
@@ -26,11 +31,17 @@ const motionPlanningArticle = {
     },
     Entries: [
       { type: "SectionBreak" },
-      { type: "SectionTitle", text: "CrazyFlie" },
+      {
+        type: "SectionTitle",
+        text: "CrazyFlie",
+        className: "FatFace",
+      },
       {
         type: "Image",
         image: crazyflie,
         alt: "An image of a crazyflie drone.",
+        width: "50%",
+        align: "center",
       },
       {
         type: "SectionEntry",
@@ -195,6 +206,87 @@ const motionPlanningArticle = {
       {
         type: "SectionBreak",
       },
+      {
+        type: "VariableGridContainer",
+        left: 1,
+        right: 2,
+        top: 1,
+        bot: 5,
+        image: gear_black,
+        alt: "Gears",
+      },
+      {
+        type: "VariableGridContainer",
+        left: 1,
+        right: 2,
+        top: 1,
+        bot: 5,
+        image: gear_white,
+        alt: "Gears",
+      },
+      // {
+      //   type: "VariableGridContainer",
+      //   left: 3,
+      //   right: 4,
+      //   top: 7,
+      //   bot: 10,
+      //   image: gear_black,
+      //   alt: "Gears",
+      // },
+      // {
+      //   type: "VariableGridContainer",
+      //   left: 3,
+      //   right: 4,
+      //   top: 7,
+      //   bot: 10,
+      //   image: gear_white,
+      //   alt: "Gears",
+      // },
+      // {
+      //   type: "VariableGridContainer",
+      //   left: 3,
+      //   right: 4,
+      //   top: 7,
+      //   bot: 10,
+      //   image: gear_white_small,
+      //   alt: "Gears",
+      // },
+      // {
+      //   type: "VariableGridContainer",
+      //   left: 3,
+      //   right: 4,
+      //   top: 7,
+      //   bot: 10,
+      //   image: gear_black_big,
+      //   alt: "Gears",
+      // },
+      // {
+      //   type: "VariableGridContainer",
+      //   left: 1,
+      //   right: 2,
+      //   top: 13,
+      //   bot: 17,
+      //   image: gear_white,
+      //   alt: "Gears",
+      // },
+      // {
+      //   type: "VariableGridContainer",
+      //   left: 1,
+      //   right: 2,
+      //   top: 13,
+      //   bot: 17,
+      //   image: gear_white_small,
+      //   alt: "Gears",
+      // },
+      // {
+      //   type: "VariableGridContainer",
+      //   left: 1,
+      //   right: 2,
+      //   top: 13,
+      //   bot: 17,
+      //   image: gear_black_big,
+      //   alt: "Gears",
+      // },
     ],
   },
 }

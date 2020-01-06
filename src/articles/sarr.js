@@ -3,6 +3,11 @@ import Article from "./article"
 import sarr_video from "../Images_and_Videos/SARR/Search_and_Rescue_Robot.mp4"
 import sarr_video_poster from "../Images_and_Videos/SARR/3-view.png"
 import sarr_sensors from "../Images_and_Videos/SARR/Sensors.png"
+import gear_black from "../Images_and_Videos/Backgrounds/gear-black.png"
+import gear_white from "../Images_and_Videos/Backgrounds/gear-white-big.png"
+import gear_white_small from "../Images_and_Videos/Backgrounds/gear-white-small.png"
+import gear_black_big from "../Images_and_Videos/Backgrounds/gear-black-big.png"
+
 const sarrArticle = {
   metadata: {
     backgroundColor: "#F7BFBF",
@@ -70,6 +75,87 @@ const sarrArticle = {
           "Working in a large group demands excellent communication. Asking for help and being able to chip in when needed was vital to the team’s success. Throughout the project, I honed my communication skills.",
       },
       { type: "SectionBreak" },
+      {
+        type: "VariableGridContainer",
+        left: 1,
+        right: 2,
+        top: 1,
+        bot: 5,
+        image: gear_black,
+        alt: "Gears",
+      },
+      {
+        type: "VariableGridContainer",
+        left: 1,
+        right: 2,
+        top: 1,
+        bot: 5,
+        image: gear_white,
+        alt: "Gears",
+      },
+      {
+        type: "VariableGridContainer",
+        left: 3,
+        right: 4,
+        top: 7,
+        bot: 8,
+        image: gear_black,
+        alt: "Gears",
+      },
+      {
+        type: "VariableGridContainer",
+        left: 3,
+        right: 4,
+        top: 7,
+        bot: 8,
+        image: gear_white,
+        alt: "Gears",
+      },
+      {
+        type: "VariableGridContainer",
+        left: 3,
+        right: 4,
+        top: 7,
+        bot: 8,
+        image: gear_white_small,
+        alt: "Gears",
+      },
+      {
+        type: "VariableGridContainer",
+        left: 3,
+        right: 4,
+        top: 7,
+        bot: 8,
+        image: gear_black_big,
+        alt: "Gears",
+      },
+      {
+        type: "VariableGridContainer",
+        left: 1,
+        right: 2,
+        top: 13,
+        bot: 17,
+        image: gear_white,
+        alt: "Gears",
+      },
+      {
+        type: "VariableGridContainer",
+        left: 1,
+        right: 2,
+        top: 13,
+        bot: 17,
+        image: gear_white_small,
+        alt: "Gears",
+      },
+      {
+        type: "VariableGridContainer",
+        left: 1,
+        right: 2,
+        top: 13,
+        bot: 17,
+        image: gear_black_big,
+        alt: "Gears",
+      },
     ],
   },
 }

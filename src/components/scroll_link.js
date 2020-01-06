@@ -15,7 +15,7 @@ const Scroller = ({ to, children }) => {
       activeClass="element-active-on-screen"
       to={to}
       spy={true}
-      //   smooth={true}
+      // smooth={true}
       smooth="easeInQuad"
       duration={500}
     >

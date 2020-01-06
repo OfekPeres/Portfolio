@@ -53,7 +53,7 @@ const CardGrid = styled.div`
   /* Fall back for no grid support */
   max-width: 500px;
   margin: 0 auto;
-  padding: 2rem 4rem;
+  padding: 5rem 4rem;
 
   /* Grid styling */
   @supports (display: grid) {

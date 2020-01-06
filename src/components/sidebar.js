@@ -4,7 +4,14 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 const StyledLink = styled(Link)`
-  background-color: white;
+  text-decoration: none;
+
+  color: #fcf7ff;
+  border: white 0px solid;
+  padding: 1.5em;
+  :hover {
+    color: skyblue;
+  }
 `
 export default ({ isOpen, handleStateChange, closeMenu }) => {
   return (
@@ -15,24 +22,21 @@ export default ({ isOpen, handleStateChange, closeMenu }) => {
       onStateChange={state => handleStateChange(state)}
       pageWrapId={"main-content"}
       outerContainerId={"outer-container"}
+      disableAutoFocus
     >
-      <StyledLink className="menu-item" to="/" onClick={closeMenu}>
+      <StyledLink to="/" onClick={closeMenu}>
         Home
       </StyledLink>
 
-      <StyledLink className="menu-item" to="/Projects" onClick={closeMenu}>
+      <StyledLink to="/Projects" onClick={closeMenu}>
         Projects
       </StyledLink>
 
-      <StyledLink
-        className="menu-item"
-        to="/WorkExperience"
-        onClick={closeMenu}
-      >
+      <StyledLink to="/WorkExperience" onClick={closeMenu}>
         Work Experience
       </StyledLink>
 
-      <StyledLink className="menu-item" to="/About" onClick={closeMenu}>
+      <StyledLink to="/About" onClick={closeMenu}>
         About
       </StyledLink>
     </Menu>

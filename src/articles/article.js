@@ -35,6 +35,7 @@ const SectionHeader = styled.h1`
 const SectionHeaderBackground = styled.div`
   background: ${({ backgroundColor }) =>
     backgroundColor !== null ? backgroundColor : "white"};
+  color: ${({ color }) => (color !== null ? color : "inherit")};
   margin-top: 89px;
   height: 34px;
   z-index: 10;
@@ -45,70 +46,79 @@ const SectionBlurb = styled.h2`
   padding-top: 60px;
   /* padding-bottom: 30px; */
   text-align: center;
-  font-family: "Cinzel", serif;
-  font-weight: bold;
+  font-family: "Raleway", serif;
+  font-weight: normal;
   font-size: 19px;
   min-width: 300px;
 
   justify-self: center;
   @media screen and (min-width: ${DesktopWidth}) {
-    font-size: 36px;
+    font-size: 22px;
   }
 `
 
 const SectionTitle = styled.h3`
   grid-column: 1/4;
-
+  grid-row-start: ${({ rowStart }) => rowStart};
   text-align: center;
   font-family: "Cinzel", serif;
   font-weight: bold;
   font-size: 19px;
   width: 100%;
-  padding: 25px 0;
+  padding-top: 20px;
+  padding-bottom: 0.8em;
   align-self: center;
   min-width: 300px;
   @media screen and (min-width: ${DesktopWidth}) {
-    font-size: 36px;
+    font-size: 27px;
   }
   @media screen and (max-width: 350px) {
     font-size: 16px;
   }
+  font-family: ${({ FatFace }) =>
+    FatFace === "FatFace" ? "Abril FatFace, serif" : "Cinzel, serif"};
+
+  padding-bottom: ${({ FatFace }) => (FatFace === "FatFace" ? "0" : ".8em")};
 `
 const SectionSubTitle = styled.h3`
   grid-column: 2;
+  grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "auto")};
   text-align: left;
   font-family: "Cinzel", serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   /* width: 100%; */
   padding-bottom: 5px;
-  padding-top: 5px;
+  padding-top: 20px;
   align-self: center;
   min-width: 278px;
   @media screen and (min-width: ${DesktopWidth}) {
-    font-size: 36px;
+    font-size: 24px;
   }
 `
 
 const SectionEntry = styled.p`
   grid-column: 2;
-  font-family: "Alegreya", serif;
+  grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "auto")};
+  /* font-family: "Alegreya", serif; */
+  font-family: "Raleway", serif;
   font-weight: lighter;
   font-size: 14px;
-
+  text-align: ${({ centered }) => (centered ? "center" : "left")};
   padding-bottom: 15px;
   min-width: 278px;
-  text-align: left;
+
   align-self: flex-start;
   @media screen and (min-width: ${DesktopWidth}) {
-    font-size: 22px;
+    font-size: 16px;
   }
 `
 
 const SectionBreak = styled.div`
   grid-column: 2;
-  
-  border: 1.5px black solid;
+  grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "auto")};
+  height:1px;
+  border: 1.0px black solid;
   /* border-width: 1.5px;
   border-color: ${color => (color !== null ? color : "black")};
   border-style: solid; */
@@ -123,7 +133,17 @@ const SectionBreak = styled.div`
 
 const ImageStyle = styled.div`
   grid-column: 2;
+  grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "-1")};
+  justify-self: ${({ align }) => (align !== null ? align : "start")};
+  /* align-self: ${({ align }) => (align !== null ? align : "start")}; */
+  /* display:flex; */
+  /* justify-self:center; */
   image-orientation: from-image;
+  padding: 1em 0;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  
 `
 const BeforeCraneCaption = styled.h4`
   /* grid-column: 2;
@@ -132,7 +152,7 @@ const BeforeCraneCaption = styled.h4`
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-family: "Abril Fatface", serif;
-  font-size: 7vw;
+  font-size: calc(5px + 5vw);
   justify-self: flex-start;
   align-self: center;
 `
@@ -143,7 +163,7 @@ const AfterCraneCaption = styled.h4`
   writing-mode: sideways-lr;
   text-orientation: mixed;
   font-family: "Abril Fatface", serif;
-  font-size: 9vw;
+  font-size: calc(5px + 6vw);
   justify-self: flex-end;
   align-self: center;
 `
@@ -179,10 +199,13 @@ const CraneImageCaption = ({ image, alt, caption, side }) => {
   }
   return <></>
 }
-const Image = ({ image, alt }) => {
+const Image = ({ image, alt, width, align, rowStart }) => {
+  if (width == null) {
+    width = "100%"
+  }
   return (
-    <ImageStyle>
-      <img src={image} alt={alt} width="100%"></img>
+    <ImageStyle align={align} rowStart={rowStart}>
+      <img src={image} alt={alt} width={width}></img>
     </ImageStyle>
   )
 }
@@ -191,9 +214,10 @@ const Image = ({ image, alt }) => {
 // This initial container so that the video is not huge
 const VideoContainer = styled.div`
   grid-column: 2;
+  grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "-1")};
   width: 100%;
-  /* margin-top: 10px; */
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 1.5em;
   align-self: center;
   min-width: 278px;
 `
@@ -221,11 +245,13 @@ const VideoCaption = styled.h3`
   font-size: 19px;
   grid-column: 2;
   justify-self: center;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
 `
 
-const Video = ({ video, poster }) => {
+const Video = ({ video, poster, rowStart }) => {
   return (
-    <VideoContainer>
+    <VideoContainer rowStart={rowStart}>
       <VideoAspectRatioContainer>
         <VideoItem>
           <video
@@ -252,29 +278,89 @@ const ArticleBody = styled.section`
     margin: 0;
 
     display: grid;
-    grid-template-columns: 1fr minmax(300px, 2fr) 1fr;
+    grid-template-columns: 1fr minmax(300px, 1.3fr) 1fr;
 
     justify-content: center;
   }
 `
+const VariableGridContainer = styled.div`
+  grid-row-start: ${({ top }) => top};
+  grid-row-end: ${({ bot }) => bot};
+  grid-column-start: ${({ left }) => left};
+  grid-column-end: ${({ right }) => right};
 
+  justify-self: center;
+`
 const Article = ({ metadata, SectionHeaderData, ArticleBodyData }) => {
   const entries =
     ArticleBodyData.Entries !== null
-      ? ArticleBodyData.Entries.map(entry => {
+      ? ArticleBodyData.Entries.map((entry, index) => {
+          if (entry.type === "VariableGridContainer") {
+            return (
+              <VariableGridContainer
+                left={entry.left}
+                right={entry.right}
+                top={entry.top}
+                bot={entry.bot}
+                className="gears"
+              >
+                <Image image={entry.image} alt={entry.alt}></Image>
+              </VariableGridContainer>
+            )
+          }
           if (entry.type === "SectionEntry") {
-            return <SectionEntry id={entry.id}>{entry.text}</SectionEntry>
+            if (entry.link) {
+              const StyledURL = styled.a`
+                text-decoration: none;
+
+                :hover {
+                  color: skyblue;
+                }
+
+                color: inherit;
+              `
+              return (
+                <SectionEntry
+                  id={entry.id}
+                  rowStart={index + 2}
+                  centered={entry.centered}
+                >
+                  <StyledURL target="_blank" href={entry.to}>
+                    {entry.text}
+                  </StyledURL>
+                </SectionEntry>
+              )
+            }
+            return (
+              <SectionEntry
+                id={entry.id}
+                rowStart={index + 2}
+                centered={entry.centered}
+              >
+                {entry.text}
+              </SectionEntry>
+            )
           }
           if (entry.type === "SectionSubTitle") {
-            return <SectionSubTitle id={entry.id}>{entry.text}</SectionSubTitle>
+            return (
+              <SectionSubTitle id={entry.id} rowStart={index + 2}>
+                {entry.text}
+              </SectionSubTitle>
+            )
           }
           if (entry.type === "SectionTitle") {
             if (entry.type2 && entry.type2 === "links") {
+              const LinkContainer = styled.div`
+                padding-bottom: 30px;
+                :hover {
+                  text-decoration: underline;
+                }
+              `
               const output = entry.links.map(link => {
                 return (
-                  <div>
+                  <LinkContainer>
                     <ScrollLink to={link.to}>{link.text}</ScrollLink>
-                  </div>
+                  </LinkContainer>
                 )
               })
 
@@ -283,24 +369,79 @@ const Article = ({ metadata, SectionHeaderData, ArticleBodyData }) => {
                 text-align: center;
               `
               return (
-                <SectionTitle id={entry.id}>
+                <SectionTitle
+                  id={entry.id}
+                  className={entry.className}
+                  rowStart={index + 2}
+                >
                   <RowOfDivs>{output}</RowOfDivs>
                 </SectionTitle>
               )
             }
-            return <SectionTitle id={entry.id}>{entry.text}</SectionTitle>
+            return (
+              <SectionTitle
+                id={entry.id}
+                FatFace={entry.className}
+                rowStart={index + 2}
+              >
+                {entry.text}
+              </SectionTitle>
+            )
           }
           if (entry.type === "SectionBreak") {
-            return <SectionBreak color={entry.color}></SectionBreak>
+            return (
+              <SectionBreak
+                rowStart={index + 2}
+                color={entry.color}
+              ></SectionBreak>
+            )
           }
           if (entry.type === "Image") {
-            return <Image image={entry.image} alt={entry.alt}></Image>
+            if (entry.link) {
+              const StyledURL = styled.a`
+                text-decoration: none;
+                grid-column: 2;
+                :hover {
+                  color: skyblue;
+                }
+
+                color: inherit;
+              `
+              return (
+                <StyledURL target="_blank" href={entry.to} rowStart={index + 2}>
+                  <Image
+                    image={entry.image}
+                    alt={entry.alt}
+                    width={entry.width}
+                    align={entry.align}
+                    rowStart={index + 2}
+                  ></Image>
+                </StyledURL>
+              )
+            }
+            return (
+              <Image
+                image={entry.image}
+                alt={entry.alt}
+                width={entry.width}
+                align={entry.align}
+                rowStart={index + 2}
+              ></Image>
+            )
           }
           if (entry.type === "Video") {
-            return <Video video={entry.video} poster={entry.poster}></Video>
+            return (
+              <Video
+                rowStart={index + 2}
+                video={entry.video}
+                poster={entry.poster}
+              ></Video>
+            )
           }
           if (entry.type === "VideoCaption") {
-            return <VideoCaption>{entry.text}</VideoCaption>
+            return (
+              <VideoCaption rowStart={index + 2}>{entry.text}</VideoCaption>
+            )
           }
           if (entry.type === "CraneCaption") {
             return (
@@ -312,6 +453,7 @@ const Article = ({ metadata, SectionHeaderData, ArticleBodyData }) => {
               ></CraneImageCaption>
             )
           }
+
           return <div></div>
         })
       : ""
@@ -325,6 +467,7 @@ const Article = ({ metadata, SectionHeaderData, ArticleBodyData }) => {
     >
       <SectionHeaderBackground
         backgroundColor={SectionHeaderData.backgroundColor}
+        color={SectionHeaderData.color}
       >
         <SectionHeader>{SectionHeaderData.text}</SectionHeader>
       </SectionHeaderBackground>
@@ -336,6 +479,5 @@ const Article = ({ metadata, SectionHeaderData, ArticleBodyData }) => {
   )
 }
 
+// export { Image }
 export default Article
-
-// export default () => <div>Hello World!</div>

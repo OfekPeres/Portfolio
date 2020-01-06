@@ -1,5 +1,5 @@
 import React from "react"
-// import styled from "styled-components"
+import styled from "styled-components"
 
 import { Card, CardGrid } from "./card"
 // Import images for all cards
@@ -73,6 +73,13 @@ const data = [
   benchpressData,
 ]
 
+const Welcome = styled.h2`
+  grid-row: 1;
+  grid-column: 1/-1;
+  justify-self: center;
+  font-family: "Alegreya", serif;
+  font-weight: normal;
+`
 const ProjectGrid = ({ inputs }) => {
   const output = inputs.map(
     ({ title, paragraphs, image, alt, backgroundColor, to }) => {
@@ -88,7 +95,12 @@ const ProjectGrid = ({ inputs }) => {
       )
     }
   )
-  return <CardGrid>{output}</CardGrid>
+  return (
+    <CardGrid>
+      <Welcome>Click on any of the project summaries to learn more!</Welcome>
+      {output}
+    </CardGrid>
+  )
 }
 
 export { ProjectGrid, data }
