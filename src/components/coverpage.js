@@ -18,22 +18,26 @@ const SpaceshipContainer = styled.div`
   max-height: 100vh;
 
   background: transparent;
-  transform: translateY(-38px) rotate(90deg);
+  transform: translateX(90px) rotate(45deg);
   /* width: 50%; */
 
   @media screen and (max-width: 1050px) {
     transform: none;
-    height: 70vh;
+    height: 80vh;
     grid-row: 2 / 4;
-    grid-column: 2 / -1;
-    width: 50%;
-    transform: translateY(60px) translateX(-60px) rotate(45deg);
+    grid-column: 3;
+    /* width: 50%; */
+    transform: none;
+    transform: translateY(60px) translateX(-60px) rotate(35deg);
+    max-width: 270px;
   }
   @media screen and (max-width: 500px) {
-    grid-column: 2 / -1;
+    grid-column: 1 / 5;
     grid-row: -3 / -1;
-    transform: translateX(-60px) translateY(40px) rotate(15deg);
+    transform: none;
+    transform: translateX(60px) translateY(-40px) rotate(15deg);
     height: 50vh;
+    max-width: 200px;
   }
   max-width: 100vw;
   position: relative;
@@ -51,7 +55,7 @@ const AstronautContainer = styled.div`
 
   position: relative;
   @media screen and (max-width: 1050px) {
-    height: 75vh;
+    height: 100vh;
     grid-row: 1 / -1;
   }
   @media screen and (max-width: 500px) {
@@ -67,13 +71,12 @@ const EarthContainer = styled.div`
 
   height: 100vh;
   grid-column: 3 / 5;
-  grid-row-start: 1;
-  grid-row-end: 5;
+  grid-row: 4;
 
   justify-self: end;
   @media screen and (max-width: 1050px) {
     height: 50vh;
-    grid-row: 2 / 3;
+    grid-row: 4;
     grid-column: 4;
   }
   @media screen and (max-width: 500px) {
@@ -96,7 +99,7 @@ const Nudge = styled.div`
   margin-top: 20px;
   width: 100%;
   grid-row: 1;
-  grid-column: 1 / 4;
+  grid-column: 1 / -1;
   animation: "nudge" 3000ms ease-in;
   opacity: 0;
   animation-delay: 6200ms;
@@ -123,7 +126,7 @@ const CoverPageTitle = styled.h1`
   color: #f08080;
   position: relative;
   grid-row: 1;
-  grid-column: 2 / 3;
+  grid-column: 1 / -1;
 
   animation: "launching";
   animation-direction: alternate;
