@@ -9,31 +9,30 @@ import EarthImage from "../Images_and_Videos/CoverPage/earth.png"
 import SpaceShipImage from "../Images_and_Videos/CoverPage/spaceship.png"
 const SpaceshipContainer = styled.div`
   display: flex;
-  /* width: 100%; */
-  height: 100%;
+
+  height: 100vh;
   grid-column: 2;
   grid-row-start: 2;
   grid-row-end: 5;
   max-height: 100vh;
-  /* min-width: 300px; */
+
   background: transparent;
   transform: translateY(-38px) rotate(45deg);
   width: 100%;
 
   @media screen and (max-width: 1050px) {
-    /* grid-column: 2 / 4; */
     transform: none;
-    height: 80%;
   }
   @media screen and (max-width: 500px) {
-    grid-column: 1 / 4;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 90vh;
     padding-left: 10%;
     padding-top: 10%;
   }
   position: relative;
   overflow: hidden;
   overflow-x: hidden;
-  /* justify-self: start; */
 `
 const AstronautContainer = styled.div`
   display: flex;
@@ -44,7 +43,6 @@ const AstronautContainer = styled.div`
   grid-column: 1 / 2;
   grid-row-start: 1;
   grid-row-end: 5;
-  /* min-width: 300px; */
 
   @media screen and (max-width: 500px) {
     display: none;
@@ -52,22 +50,21 @@ const AstronautContainer = styled.div`
 
   @media screen and (max-width: 1050px) {
     grid-column: 1 / 3;
+    grid-row: 2;
   }
   position: relative;
   overflow: hidden;
   overflow-x: hidden;
-  z-index: 10;
+  z-index: 12;
 `
 const EarthContainer = styled.div`
   display: flex;
-  /* width: 100%; */
+
   height: 100vh;
   grid-column: 3 / 5;
   grid-row-start: 1;
   grid-row-end: 5;
-  /* min-width: 300px; */
-  /* max-width: 100%; */
-  /* overflow: none; */
+
   justify-self: end;
   @media screen and (max-width: 1050px) {
     display: none;
@@ -84,7 +81,7 @@ const Nudge = styled.div`
   margin-top: 20px;
   width: 100%;
   grid-row: 1;
-  grid-column: 1/4;
+  grid-column: 1 / 4;
   animation: "nudge" 3000ms ease-in;
   opacity: 0;
   animation-delay: 6200ms;
@@ -109,9 +106,9 @@ const CoverPageTitle = styled.h1`
   font-size: 40px;
   text-align: center;
   color: #f08080;
-
+  position: relative;
   grid-row: 1;
-  grid-column: 2/3;
+  grid-column: 2 / 3;
 
   animation: "launching";
   animation-direction: alternate;
@@ -131,6 +128,10 @@ const CoverPageTitle = styled.h1`
     }
   }
   z-index: 11;
+
+  @media screen and (max-width: 500px) {
+    grid-column: 1 / -1;
+  }
 `
 
 const ImageHolder = styled.div`

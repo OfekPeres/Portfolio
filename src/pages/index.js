@@ -33,7 +33,6 @@ const Intro = styled.article`
 
 const Page = () => {
   const scrollToElement = () => {
-    console.log("GO TO SARR!")
     scroller.scrollTo("ID1", {
       duration: 500,
       smooth: true,
