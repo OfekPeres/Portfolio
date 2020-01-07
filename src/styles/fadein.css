@@ -4,9 +4,11 @@
   visibility: hidden;
   transition: opacity 0.6s ease-out, transform 1.2s ease-out;
   will-change: opacity, visibility;
+  animation-iteration-count: 1;
 }
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
   visibility: visible;
+  animation-iteration-count: 1;
 }

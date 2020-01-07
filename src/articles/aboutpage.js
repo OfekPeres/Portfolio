@@ -127,6 +127,7 @@ const FadeInContainer = styled.div`
 const FadeInSection = props => {
   const [isVisible, setVisible] = React.useState(true)
   const domRef = React.useRef()
+
   React.useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => setVisible(entry.isIntersecting))
