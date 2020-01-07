@@ -6,6 +6,9 @@ import GitHubLogo from "../Images_and_Videos/About/GitHubLogo.png"
 import LinkedInLogo from "../Images_and_Videos/About/LI-Logo.png"
 import "../styles/fadein.css"
 
+import "animate.css/animate.min.css"
+import ScrollAnimation from "react-animate-on-scroll"
+
 const Body = styled.body`
   display: grid;
   grid-template-columns: 1fr minmax(250px, 2fr) 1fr;
@@ -116,7 +119,14 @@ const LinkedLogo = ({ logo, to, alt, align, width, rowStart, height }) => {
   )
 }
 
-const FadeInContainer = styled.div`
+// const FadeInContainer = styled.div`
+//   grid-column: 2;
+//   justify-self: ${({ align }) => (align !== null ? align : "flex-start")};
+//   display: grid;
+//   justify-content: left;
+//   align-items: left;
+// `
+const FadeInContainer = styled(ScrollAnimation)`
   grid-column: 2;
   justify-self: ${({ align }) => (align !== null ? align : "flex-start")};
   display: grid;
@@ -124,28 +134,35 @@ const FadeInContainer = styled.div`
   align-items: left;
 `
 
-const FadeInSection = props => {
-  const [isVisible, setVisible] = React.useState(true)
-  const domRef = React.useRef()
-
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => setVisible(entry.isIntersecting))
-    })
-    const curDomRef = domRef.current
-    observer.observe(domRef.current)
-    return () => observer.unobserve(curDomRef)
-  }, [])
+const FadeInSection = ({ align, children }) => {
   return (
-    <FadeInContainer
-      align={props.align}
-      className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
-      ref={domRef}
-    >
-      {props.children}
+    <FadeInContainer align={align} animateIn="fadeIn">
+      {children}
     </FadeInContainer>
   )
 }
+// const FadeInSection = props => {
+//   const [isVisible, setVisible] = React.useState(true)
+//   const domRef = React.useRef()
+
+//   React.useEffect(() => {
+//     const observer = new IntersectionObserver(entries => {
+//       entries.forEach(entry => setVisible(entry.isIntersecting))
+//     })
+//     const curDomRef = domRef.current
+//     observer.observe(domRef.current)
+//     return () => observer.unobserve(curDomRef)
+//   }, [])
+//   return (
+//     <FadeInContainer
+//       align={props.align}
+//       className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+//       ref={domRef}
+//     >
+//       {props.children}
+//     </FadeInContainer>
+//   )
+// }
 
 const aboutData = [
   { type: "PageTitle", text: "About Me", align: "center" },
