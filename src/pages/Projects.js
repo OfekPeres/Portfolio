@@ -32,6 +32,7 @@ const Page = () => {
   const scrollToTop = () => {
     scroll.scrollToTop()
   }
+
   const handleStateChange = state => {
     setState({ ...state, menuOpen: state.isOpen })
   }
@@ -81,7 +82,8 @@ const Page = () => {
         ></HeaderBar>
 
         <ProjectGrid></ProjectGrid>
-        <SarrArticle></SarrArticle>
+
+        <SarrArticle name="SARR"></SarrArticle>
         <MotionPlanningArticle></MotionPlanningArticle>
         <ThesisArticle></ThesisArticle>
         <PendulumArticle></PendulumArticle>
@@ -89,6 +91,7 @@ const Page = () => {
         <BenchPressArticle></BenchPressArticle>
         <UpArrow onClick={scrollToTop}></UpArrow>
         <Logo></Logo>
+
         <Footer></Footer>
       </Main>
     </GlobalLayout>

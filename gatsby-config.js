@@ -39,6 +39,5 @@ module.exports = {
         icon: `src/images/OfekLogo.png`,
       },
     },
-    `gatsby-plugin-offline`,
   ],
 }

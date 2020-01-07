@@ -2,6 +2,8 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
+import { Element, scroller } from "react-scroll"
+
 import OfekParticles from "../components/Particles"
 import {
   SpaceShip,
@@ -30,6 +32,15 @@ const Intro = styled.article`
 `
 
 const Page = () => {
+  const scrollToElement = () => {
+    console.log("GO TO SARR!")
+    scroller.scrollTo("ID1", {
+      duration: 500,
+      smooth: true,
+    })
+  }
+
+  setTimeout(scrollToElement, 9000)
   return (
     <div>
       <Helmet>
@@ -46,10 +57,12 @@ const Page = () => {
         <Astronaut></Astronaut>
         <Earth></Earth>
       </Main>
-      <Intro>
-        <OfekParticles simple></OfekParticles>
-        <HomePageIntro></HomePageIntro>
-      </Intro>
+      <Element name="ID1">
+        <Intro>
+          <OfekParticles simple></OfekParticles>
+          <HomePageIntro></HomePageIntro>
+        </Intro>
+      </Element>
     </div>
   )
 }

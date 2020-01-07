@@ -17,7 +17,8 @@ const PageTitle = styled.h1`
   grid-column: 2;
   text-align: center;
   grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "auto")};
-  padding-bottom: 5%;
+  padding-bottom: calc(26px + 10%);
+  padding-top: calc(26px + 10%);
   justify-content: center;
 `
 

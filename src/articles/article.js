@@ -261,16 +261,18 @@ const Video = ({ video, poster, rowStart, loop }) => {
     <VideoContainer rowStart={rowStart}>
       <VideoAspectRatioContainer>
         <VideoItem>
-          <video
+          <img
             src={video}
             poster={poster}
             width="100%"
             height="100%"
             controls
+            type="video/mp4"
+            playsinline
             // muted
-            playsInline
+            // playsInline
             loop={loop}
-          ></video>
+          ></img>
         </VideoItem>
       </VideoAspectRatioContainer>
     </VideoContainer>

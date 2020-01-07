@@ -10,8 +10,8 @@ import ObstacleAvoidance_side from "../Images_and_Videos/Robotics/ObstacleAvoida
 
 import gear_black from "../Images_and_Videos/Backgrounds/gear-black.png"
 import gear_white from "../Images_and_Videos/Backgrounds/gear-white-big.png"
-import gear_white_small from "../Images_and_Videos/Backgrounds/gear-white-small.png"
-import gear_black_big from "../Images_and_Videos/Backgrounds/gear-black-big.png"
+// import gear_white_small from "../Images_and_Videos/Backgrounds/gear-white-small.png"
+// import gear_black_big from "../Images_and_Videos/Backgrounds/gear-black-big.png"
 
 const motionPlanningArticle = {
   metadata: {

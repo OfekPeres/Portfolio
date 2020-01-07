@@ -66,7 +66,7 @@ const workExperienceLinkText = "Check out my work experience here!"
 const HomePageIntro = () => {
   return (
     <>
-      <Name to={"/About"}>Ofek Peres</Name>
+      <Name id="HomePageName" to={"/About"}>Ofek Peres</Name>
       <BlurbAboutMe>{blurbAboutMeText}</BlurbAboutMe>
       <AboutMe>{aboutMeText}</AboutMe>
       <StyledGatsbyLink left column={2} to={"/Projects"}>
