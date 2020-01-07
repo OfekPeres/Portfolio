@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 
 import background_image from "../Images_and_Videos/Backgrounds/space-background.png"
 
-import { Arrow } from "react-burgers"
+import { Slider } from "react-burgers"
 
 const StyledGatsbyLink = styled(Link)`
   color: #fcf7ff;
@@ -58,12 +58,12 @@ const HeaderBar = ({ currentPage, toggleMenu, menuOpen }) => {
         </StyledGatsbyLink>
       </HeaderItemContainer>
       <HeaderItemContainer className="ArrowMenu">
-        <Arrow
+        <Slider
           color="white"
-          borderRadius={20}
+          borderRadius={100}
           onClick={toggleMenu}
           active={menuOpen}
-          lineHeight={2}
+          lineHeight={3}
         />
       </HeaderItemContainer>
     </HeaderContainer>

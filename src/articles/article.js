@@ -113,7 +113,16 @@ const SectionEntry = styled.p`
     font-size: 16px;
   }
 `
-
+const ImageCaption = styled.p`
+  grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "auto")};
+  font-family: "Raleway", serif;
+  font-weight: lighter;
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 35px;
+  min-width: 278px;
+  grid-column: 2;
+`
 const SectionBreak = styled.div`
   grid-column: 2;
   grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "auto")};
@@ -451,6 +460,11 @@ const Article = ({ metadata, SectionHeaderData, ArticleBodyData }) => {
           if (entry.type === "VideoCaption") {
             return (
               <VideoCaption rowStart={index + 2}>{entry.text}</VideoCaption>
+            )
+          }
+          if (entry.type === "ImageCaption") {
+            return (
+              <ImageCaption rowStart={index + 2}>{entry.text}</ImageCaption>
             )
           }
           if (entry.type === "CraneCaption") {

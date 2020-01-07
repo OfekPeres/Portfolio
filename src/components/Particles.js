@@ -4,8 +4,8 @@ import Particles from "react-particles-js"
 
 const ParticleContainer = styled.div`
   background-color: #0b0222;
-  grid-column: 1 / 5;
-  grid-row: 1 / 5;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
   @media screen and (max-width: 480px) {
     /* display: none; */
   }

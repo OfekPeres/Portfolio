@@ -8,31 +8,35 @@ import AstronautImage from "../Images_and_Videos/CoverPage/astronaut.png"
 import EarthImage from "../Images_and_Videos/CoverPage/earth.png"
 import SpaceShipImage from "../Images_and_Videos/CoverPage/spaceship.png"
 const SpaceshipContainer = styled.div`
-  display: flex;
+  /* display: flex; */
 
-  height: 100vh;
   grid-column: 2;
   grid-row-start: 2;
   grid-row-end: 5;
+
+  height: 100vh;
   max-height: 100vh;
 
   background: transparent;
-  transform: translateY(-38px) rotate(45deg);
-  width: 100%;
+  transform: translateY(-38px) rotate(90deg);
+  /* width: 50%; */
 
   @media screen and (max-width: 1050px) {
     transform: none;
+    height: 70vh;
+    grid-row: 2 / 4;
+    grid-column: 2 / -1;
+    width: 50%;
+    transform: translateY(60px) translateX(-60px) rotate(45deg);
   }
   @media screen and (max-width: 500px) {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    height: 90vh;
-    padding-left: 10%;
-    padding-top: 10%;
+    grid-column: 2 / -1;
+    grid-row: -3 / -1;
+    transform: translateX(-60px) translateY(40px) rotate(15deg);
+    height: 50vh;
   }
+  max-width: 100vw;
   position: relative;
-  overflow: hidden;
-  overflow-x: hidden;
 `
 const AstronautContainer = styled.div`
   display: flex;
@@ -43,18 +47,19 @@ const AstronautContainer = styled.div`
   grid-column: 1 / 2;
   grid-row-start: 1;
   grid-row-end: 5;
+  grid-row: 2 / -1;
 
-  @media screen and (max-width: 500px) {
-    display: none;
-  }
-
-  @media screen and (max-width: 1050px) {
-    grid-column: 1 / 3;
-    grid-row: 2;
-  }
   position: relative;
-  overflow: hidden;
-  overflow-x: hidden;
+  @media screen and (max-width: 1050px) {
+    height: 75vh;
+    grid-row: 1 / -1;
+  }
+  @media screen and (max-width: 500px) {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    transform: translateY(90px);
+    height: 47vh;
+  }
   z-index: 12;
 `
 const EarthContainer = styled.div`
@@ -67,11 +72,21 @@ const EarthContainer = styled.div`
 
   justify-self: end;
   @media screen and (max-width: 1050px) {
-    display: none;
+    height: 50vh;
+    grid-row: 2 / 3;
+    grid-column: 4;
+  }
+  @media screen and (max-width: 500px) {
+    grid-column: 4;
+    grid-row: -2 / -1;
+    /* transform: translateY(-70px); */
+
+    height: 40vh;
   }
   overflow: hidden;
   overflow-x: hidden;
   position: relative;
+  z-index: 13;
 `
 const Nudge = styled.div`
   font-family: "Abril FatFace";
@@ -131,12 +146,16 @@ const CoverPageTitle = styled.h1`
 
   @media screen and (max-width: 500px) {
     grid-column: 1 / -1;
+    grid-row: 1;
   }
 `
 
 const ImageHolder = styled.div`
-  width: 100%;
+  width: auto;
   height: 100%;
+  max-height: 90vh;
+  object-fit: cover;
+
   overflow: hidden;
 `
 const SpaceShip = () => {

@@ -43,7 +43,7 @@ const fluidsArticle = {
         width: "50%",
       },
       {
-        type: "SectionEntry",
+        type: "ImageCaption",
         text: "Above is an image of the Anton Paar 301 Rheometer",
         centered: true,
       },

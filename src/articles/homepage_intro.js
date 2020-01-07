@@ -51,11 +51,13 @@ const StyledGatsbyLink = styled(Link)`
   :hover {
     color: skyblue;
   }
-  align-self: start;
+  align-self: center;
   justify-self: ${({ left }) => (left ? "start" : "end")};
 
   width: 85%;
-  margin-bottom: 20px;
+  /* margin-bottom: 40px; */
+  position: relative;
+  top: -70%;
 `
 
 const blurbAboutMeText = "Algorithm & Controls Robotics Developer"
@@ -66,7 +68,9 @@ const workExperienceLinkText = "Check out my work experience here!"
 const HomePageIntro = () => {
   return (
     <>
-      <Name id="HomePageName" to={"/About"}>Ofek Peres</Name>
+      <Name id="HomePageName" to={"/About"}>
+        Ofek Peres
+      </Name>
       <BlurbAboutMe>{blurbAboutMeText}</BlurbAboutMe>
       <AboutMe>{aboutMeText}</AboutMe>
       <StyledGatsbyLink left column={2} to={"/Projects"}>

@@ -90,7 +90,7 @@ const motionPlanningArticle = {
       {
         type: "SectionEntry",
         text:
-          "The Rapidly Exploring Random Tree algorithm, or RRT for short, is one of my favorite algorithms. It is used find a path from a source location to a target area in continuous space. RRT does not guarantee an optimal path, but as I will demonstrate below, it usually finds a pretty good one! In my implementation, I denoted the obstacles as blue disks and the target area as a green circle.",
+          "The Rapidly Exploring Random Tree algorithm, or RRT for short, is one of my favorite algorithms. It is used to find a path from a source location to a target area in continuous space. RRT does not guarantee an optimal path, but as I will demonstrate below, it usually finds a pretty good one! In my implementation, I denoted the obstacles as blue disks and the target area as a green circle.",
       },
       {
         type: "Image",
@@ -192,7 +192,7 @@ const motionPlanningArticle = {
       {
         type: "SectionEntry",
         text:
-          "In the simulation of a simple particle filter above, the orange dot represents where the dynamics of the robot and the blue dots represent particles. Clusters of particles represent a high probability of the robot being at that location. ",
+          "In the simulation of a particle filter above, the orange dot represents the location of the robot and the blue dots represent particles. Each particle represents a potential location of the robot. Clusters of particles represent a high probability of the robot being at that location. ",
       },
       {
         type: "SectionEntry",
@@ -202,7 +202,7 @@ const motionPlanningArticle = {
       {
         type: "SectionEntry",
         text:
-          "Due to the symmetry of the simulation, 2 roughly equal clusters of particles emerge. To improve the particle filter and remove the incorrect cluster, the sensor needs a way to break the symmetry of the simulation. One potential way to do so would be to have the sensor report two data points, distance from the origin, and direction.",
+          "Due to the symmetry of the simulation, 2 roughly equal clusters of particles emerge. To improve the particle filter and remove the incorrect cluster, the sensor needs a way to break the symmetry of the simulation. One potential way to do so would be to have the sensor report two data points: distance from the origin, and direction.",
       },
       {
         type: "SectionBreak",
