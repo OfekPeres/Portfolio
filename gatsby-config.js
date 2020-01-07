@@ -11,6 +11,7 @@ module.exports = {
     description: `A website to bring to life some of my favorite projects`,
     author: `ofekp`,
   },
+  pathPrefix: "/Portfolio",
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
