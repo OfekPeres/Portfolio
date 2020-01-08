@@ -182,6 +182,7 @@ const AfterCraneCaption = styled.h4`
   justify-self: flex-end;
   align-self: center;
   transform: rotate(-90deg);
+  margin: 10px 0;
 `
 const CraneCaptionStyle = styled.div`
   grid-column: 2;
@@ -192,15 +193,25 @@ const CraneCaptionStyle = styled.div`
   margin-top: 20px;
 `
 
+const CraneCaptionStyleAfter = styled.div`
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  /* transform: rotate(-90deg); */
+`
+
 const CraneImageCaption = ({ image, alt, caption, side }) => {
   if (side === "left") {
     return (
-      <CraneCaptionStyle>
+      <CraneCaptionStyleAfter>
         <AfterCraneCaption>{caption}</AfterCraneCaption>
         <ImageStyle right>
           <img src={image} alt={alt} width="95%"></img>
         </ImageStyle>
-      </CraneCaptionStyle>
+      </CraneCaptionStyleAfter>
     )
   }
   if (side === "right") {
