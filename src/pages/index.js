@@ -39,10 +39,10 @@ const Intro = styled.article`
 
 const Page = () => {
   const scrollToElement = () => {
-    scroller.scrollTo("ID1", {
-      duration: 500,
-      smooth: true,
-    })
+    // scroller.scrollTo("ID1", {
+    //   duration: 500,
+    //   smooth: true,
+    // })
   }
 
   setTimeout(scrollToElement, 9000)

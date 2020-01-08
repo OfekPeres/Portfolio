@@ -58,6 +58,9 @@ const StyledGatsbyLink = styled(Link)`
   /* margin-bottom: 40px; */
   position: relative;
   top: -70%;
+  @media screen and (max-width: 350px) {
+    top: -10px;
+  }
 `
 
 const blurbAboutMeText = "Algorithm & Controls Robotics Developer"

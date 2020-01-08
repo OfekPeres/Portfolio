@@ -18,26 +18,33 @@ const SpaceshipContainer = styled.div`
   max-height: 100vh;
 
   background: transparent;
-  transform: translateX(90px) rotate(45deg);
-  /* width: 50%; */
+  transform: translateX(-10px) rotate(45deg);
 
   @media screen and (max-width: 1050px) {
     transform: none;
-    height: 80vh;
+    height: 60vh;
     grid-row: 2 / 4;
-    grid-column: 3;
-    /* width: 50%; */
-    transform: none;
-    transform: translateY(60px) translateX(-60px) rotate(35deg);
-    max-width: 270px;
+    grid-column: 1 / 3;
+
+    transform: translateY(60px) translateX(200px) rotate(30deg);
+    /* max-width: 270px; */
   }
-  @media screen and (max-width: 500px) {
-    grid-column: 1 / 5;
+  @media screen and (max-width: 850px) {
+    transform: none;
+    height: 60vh;
+    grid-row: 2 / 4;
+    grid-column: 2 / 4;
+    transform: rotate(35deg);
+    max-width: 400px;
+  }
+
+  @media screen and (max-width: 550px) {
+    grid-column: 1 / 2;
     grid-row: -3 / -1;
     transform: none;
-    transform: translateX(60px) translateY(-40px) rotate(15deg);
+    transform: translateX(50px) translateY(-40px) rotate(15deg);
     height: 50vh;
-    max-width: 200px;
+    max-width: 250px;
   }
   max-width: 100vw;
   position: relative;
@@ -55,10 +62,13 @@ const AstronautContainer = styled.div`
 
   position: relative;
   @media screen and (max-width: 1050px) {
-    height: 100vh;
+    height: 60vh;
     grid-row: 1 / -1;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 850px) {
+    height: 60vh;
+  }
+  @media screen and (max-width: 550px) {
     grid-column: 1 / 2;
     grid-row: 1 / -1;
     transform: translateY(90px);
@@ -75,15 +85,17 @@ const EarthContainer = styled.div`
 
   justify-self: end;
   @media screen and (max-width: 1050px) {
-    height: 50vh;
+    height: 70vh;
     grid-row: 4;
     grid-column: 4;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 850px) {
+    height: 40vh;
+  }
+  @media screen and (max-width: 550px) {
     grid-column: 4;
     grid-row: -2 / -1;
-    /* transform: translateY(-70px); */
-
+    transform: translateY(-40px);
     height: 40vh;
   }
   overflow: hidden;
