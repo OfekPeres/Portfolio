@@ -6,7 +6,7 @@ import "../styles/main.css"
 
 import AstronautImage from "../Images_and_Videos/CoverPage/astronaut.png"
 import EarthImage from "../Images_and_Videos/CoverPage/earth.png"
-import SpaceShipImage from "../Images_and_Videos/CoverPage/spaceship.png"
+import SpaceShipImage from "../Images_and_Videos/CoverPage/spaceship-fixed.png"
 const SpaceshipContainer = styled.div`
   /* display: flex; */
 
