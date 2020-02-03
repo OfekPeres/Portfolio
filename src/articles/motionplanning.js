@@ -8,6 +8,17 @@ import particleFilterVideo from "../Images_and_Videos/Robotics/particle_filter.m
 import ObstacleAvoidance_behind from "../Images_and_Videos/Robotics/ObstacleAvoidancePOV_behind.mp4"
 import ObstacleAvoidance_side from "../Images_and_Videos/Robotics/ObstacleAvoidance_side.mp4"
 
+// Final Project videos
+import wall_frontview from "../Images_and_Videos/Robotics/wall_frontview.mp4"
+import wall_droneview from "../Images_and_Videos/Robotics/wall_droneview.mp4"
+
+import triangle_frontview from "../Images_and_Videos/Robotics/triangle_frontview.mp4"
+import triangle_sideview from "../Images_and_Videos/Robotics/triangle_sideview.mp4"
+import triangle_droneview from "../Images_and_Videos/Robotics/triangle_droneview.mp4"
+
+import twoon1_frontview from "../Images_and_Videos/Robotics/2on1_frontview.mp4"
+import twoon1_droneview from "../Images_and_Videos/Robotics/2on1_droneview.mp4"
+
 import gear_black from "../Images_and_Videos/Backgrounds/gear-black.png"
 import gear_white from "../Images_and_Videos/Backgrounds/gear-white-big.png"
 // import gear_white_small from "../Images_and_Videos/Backgrounds/gear-white-small.png"
@@ -46,10 +57,87 @@ const motionPlanningArticle = {
       {
         type: "SectionEntry",
         text:
-          "Throughout my Robotics course, I learned and implemented in Python, a variety of motion planning and localization algorithms. For the final project, I worked in a small team to fly a drone through a never before seen obstacle course. Below, please find some of my favorite parts of the course.",
+          "Throughout my Robotics course, I learned and implemented in Python, a variety of motion planning and localization algorithms. For the final project, I worked in a small team to fly a drone through any arbitrary obstacle course. Below, please find some of my favorite parts of the course.",
       },
       { type: "SectionBreak" },
+      // Final Project - 2/2/2020
+      {
+        type: "SectionTitle",
+        text: "Final Project",
+      },
+      {
+        type: "SectionEntry",
+        text:
+          "For the final project in robotics, I implemented Reactive Planning utilizing Computer Vision to guide a quadcopter through a never before seen, dynamic obstacle course.",
+      },
+      // Videos go here
+      { type: "VideoCaption", text: "Dynamic Obstacle Course" },
+      { type: "Video", video: twoon1_frontview },
+      { type: "Video", video: twoon1_droneview },
 
+      { type: "VideoCaption", text: "Pyramid Structure" },
+      { type: "Video", video: triangle_frontview },
+      { type: "Video", video: triangle_sideview },
+      { type: "Video", video: triangle_droneview },
+
+      { type: "VideoCaption", text: "Wall-like Structure" },
+      { type: "Video", video: wall_frontview },
+      { type: "Video", video: wall_droneview },
+      {
+        type: "SectionEntry",
+        text:
+          "The control system had 3 key components: identifying obstacles, finding a safe path, and sending control inputs to the Crazyflie.",
+      },
+      {
+        type: "SectionEntry",
+        text:
+          "To identify obstacles, I utilized the onboard camera and opencv to find the PVC pipes. Utilizing a color mask, I was able to find all pixels that were the same color as the PVC pipes. Then, I defined an obstacle as clusters of more than 20 pixels.",
+      },
+      {
+        type: "SectionEntry",
+        text:
+          "Once obstacles were identified, the control system found and targeted the largest gap between any of the obstacles. ",
+      },
+      {
+        type: "SectionEntry",
+        text:
+          "Lastly, the flat output space control inputs,  the x, y, z, and yaw positions, were sent to the Crazyflie to guide it towards the largest gap.",
+      },
+      {
+        type: "SectionSubTitle",
+        text: "Additional Details",
+      },
+      {
+        type: "SectionEntry",
+        text:
+          "The proportional derivative control algorithm was designed to bring the quadcopter to the target location (the green circle in the videos).",
+      },
+      {
+        type: "SectionEntry",
+        text:
+          "Error in the system was calculated as the difference between the target location and the center of the field of view. ",
+      },
+      {
+        type: "SectionEntry",
+        text:
+          "Each control input was a step towards the target position, driving the error towards zero.",
+      },
+      {
+        type: "SectionEntry",
+        text:
+          "The forward and sideways directions were linked. If the error was small, the drone was able to fly forwards swiftly, without fear of obstacles in its path.",
+      },
+      {
+        type: "SectionEntry",
+        text:
+          "However, if the error was large, that meant that there were obstacles in front of the quadcopter. When this happened, the drone slowed its forward motion proportionally to how far to the side it needed to go. This increased the time available react to obstacles in the center of the field of view and avoided imminent collisions.",
+      },
+      {
+        type: "SectionEntry",
+        text:
+          "In order to drive the quadcopter towards the center of the obstacle course, the field of view was restricted based on current position. For example, if the drone flew towards the left, it would prefer finding gaps to fly through in the right side of its field of view. This can visually be seen by the vertical green lines in the drone’s perspective.",
+      },
+      { type: "SectionBreak" },
       {
         type: "SectionTitle",
         text: "Favorite Algorithms",
