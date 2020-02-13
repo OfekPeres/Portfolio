@@ -4,20 +4,33 @@ import crazyflie from "../Images_and_Videos/Robotics/CrazyFlie.jpg"
 import astar_clean from "../Images_and_Videos/Robotics/astar_clean.png"
 import RRT_image from "../Images_and_Videos/Robotics/RRT.png"
 import PRM_image from "../Images_and_Videos/Robotics/PRM.jpg"
+
 import particleFilterVideo from "../Images_and_Videos/Robotics/particle_filter.mp4"
+import particleFilterVideo_poster from "../Images_and_Videos/Robotics/particle_filter_poster.png"
+
 import ObstacleAvoidance_behind from "../Images_and_Videos/Robotics/ObstacleAvoidancePOV_behind.mp4"
+import ObstacleAvoidance_behind_poster from "../Images_and_Videos/Robotics/ObstacleAvoidancePOV_behind_poster.png"
+
 import ObstacleAvoidance_side from "../Images_and_Videos/Robotics/ObstacleAvoidance_side.mp4"
+import ObstacleAvoidance_side_poster from "../Images_and_Videos/Robotics/ObstacleAvoidance_side_poster.png"
 
 // Final Project videos
 import wall_frontview from "../Images_and_Videos/Robotics/wall_frontview.mp4"
+import wall_frontview_poster from "../Images_and_Videos/Robotics/wall_frontview_poster.png"
 import wall_droneview from "../Images_and_Videos/Robotics/wall_droneview.mp4"
+import wall_droneview_poster from "../Images_and_Videos/Robotics/wall_droneview_poster.png"
 
 import triangle_frontview from "../Images_and_Videos/Robotics/triangle_frontview.mp4"
+import triangle_frontview_poster from "../Images_and_Videos/Robotics/triangle_frontview_poster.png"
 import triangle_sideview from "../Images_and_Videos/Robotics/triangle_sideview.mp4"
+import triangle_sideview_poster from "../Images_and_Videos/Robotics/triangle_sideview_poster.png"
 import triangle_droneview from "../Images_and_Videos/Robotics/triangle_droneview.mp4"
+import triangle_droneview_poster from "../Images_and_Videos/Robotics/triangle_droneview_poster.png"
 
 import twoon1_frontview from "../Images_and_Videos/Robotics/2on1_frontview.mp4"
+import twoon1_frontview_poster from "../Images_and_Videos/Robotics/2on1_frontview_poster.png"
 import twoon1_droneview from "../Images_and_Videos/Robotics/2on1_droneview.mp4"
+import twoon1_droneview_poster from "../Images_and_Videos/Robotics/2on1_droneview_poster.png"
 
 import gear_black from "../Images_and_Videos/Backgrounds/gear-black.png"
 import gear_white from "../Images_and_Videos/Backgrounds/gear-white-big.png"
@@ -72,17 +85,37 @@ const motionPlanningArticle = {
       },
       // Videos go here
       { type: "VideoCaption", text: "Dynamic Obstacle Course" },
-      { type: "Video", video: twoon1_frontview },
-      { type: "Video", video: twoon1_droneview },
+      {
+        type: "Video",
+        video: twoon1_frontview,
+        poster: twoon1_frontview_poster,
+      },
+      {
+        type: "Video",
+        video: twoon1_droneview,
+        poster: twoon1_droneview_poster,
+      },
 
       { type: "VideoCaption", text: "Pyramid Structure" },
-      { type: "Video", video: triangle_frontview },
-      { type: "Video", video: triangle_sideview },
-      { type: "Video", video: triangle_droneview },
+      {
+        type: "Video",
+        video: triangle_frontview,
+        poster: triangle_frontview_poster,
+      },
+      {
+        type: "Video",
+        video: triangle_sideview,
+        poster: triangle_sideview_poster,
+      },
+      {
+        type: "Video",
+        video: triangle_droneview,
+        poster: triangle_droneview_poster,
+      },
 
       { type: "VideoCaption", text: "Wall-like Structure" },
-      { type: "Video", video: wall_frontview },
-      { type: "Video", video: wall_droneview },
+      { type: "Video", video: wall_frontview, poster: wall_frontview_poster },
+      { type: "Video", video: wall_droneview, poster: wall_droneview_poster },
       {
         type: "SectionEntry",
         text:
@@ -203,9 +236,17 @@ const motionPlanningArticle = {
       },
       //   Insert the two crazy flie videos here!!
       { type: "VideoCaption", text: "Behind Drone POV" },
-      { type: "Video", video: ObstacleAvoidance_behind },
+      {
+        type: "Video",
+        video: ObstacleAvoidance_behind,
+        poster: ObstacleAvoidance_behind_poster,
+      },
       { type: "VideoCaption", text: "Side of Drone POV" },
-      { type: "Video", video: ObstacleAvoidance_side },
+      {
+        type: "Video",
+        video: ObstacleAvoidance_side,
+        poster: ObstacleAvoidance_side_poster,
+      },
 
       {
         type: "SectionEntry",
@@ -276,6 +317,7 @@ const motionPlanningArticle = {
         type: "Video",
         video: particleFilterVideo,
         loop: true,
+        poster: particleFilterVideo_poster,
       },
       {
         type: "SectionEntry",

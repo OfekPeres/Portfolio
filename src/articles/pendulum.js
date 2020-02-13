@@ -1,6 +1,7 @@
 import React from "react"
 import Article from "./article"
 import pendulum_video from "../Images_and_Videos/Inverted_Pendulum/pendulumVideo.mp4"
+import pendulum_video_poster from "../Images_and_Videos/Inverted_Pendulum/pendulumVideo_poster.png"
 
 const pendulumArticle = {
   metadata: {
@@ -19,7 +20,7 @@ const pendulumArticle = {
     },
     Entries: [
       { type: "SectionBreak", color: "#FCF7FF" },
-      { type: "Video", video: pendulum_video },
+      { type: "Video", video: pendulum_video, poster: pendulum_video_poster },
 
       { type: "SectionBreak", color: "#FCF7FF" },
     ],

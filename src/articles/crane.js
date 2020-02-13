@@ -1,6 +1,7 @@
 import React from "react"
 import Article from "./article"
 import crane_video from "../Images_and_Videos/Crane/crane_video.mp4"
+import crane_video_poster from "../Images_and_Videos/Crane/crane_video_poster.png"
 import crane_image from "../Images_and_Videos/Crane/CraneImage.png"
 import real_crane from "../Images_and_Videos/Crane/RealCraneImage.jpg"
 import deformed_crane from "../Images_and_Videos/Crane/FinalDeformed.jpg"
@@ -41,6 +42,7 @@ const craneArticle = {
       {
         type: "Video",
         video: crane_video,
+        poster: crane_video_poster,
       },
       {
         type: "SectionEntry",

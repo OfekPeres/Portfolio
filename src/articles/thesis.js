@@ -1,8 +1,11 @@
 import React from "react"
 import Article from "./article"
 
-import QRTracking_drone from "../Images_and_Videos/Thesis/QRTracking_Drone.mp4"
-import QRTracking_human from "../Images_and_Videos/Thesis/QRTracking_human.mp4"
+// import QRTracking_drone from "../Images_and_Videos/Thesis/QRTracking_Drone.mp4"
+// import QRTracking_human from "../Images_and_Videos/Thesis/QRTracking_human.mp4"
+import QRTracking_yaw from "../Images_and_Videos/Thesis/QR_Tracking_Yaw.mp4"
+import QRTracking_yaw_poster from "../Images_and_Videos/Thesis/QR_Tracking_Yaw_poster.png"
+
 import gears from "../Images_and_Videos/Backgrounds/gears.png"
 const thesisArticle = {
   metadata: {
@@ -46,7 +49,7 @@ const thesisArticle = {
       {
         type: "SectionEntry",
         text:
-          "This project is currently in development and will be  updated with major developments as they occur.",
+          "This project is currently in development and will be updated with major breakthroughs as they occur.",
       },
       {
         type: "SectionEntry",
@@ -59,10 +62,14 @@ const thesisArticle = {
           "Check out how the control algorithm works from the drone’s perspective and from an observer’s perspective!",
       },
 
-      { type: "VideoCaption", text: "Drone POV" },
-      { type: "Video", video: QRTracking_drone },
-      { type: "VideoCaption", text: "Human Drone POV" },
-      { type: "Video", video: QRTracking_human },
+      { type: "VideoCaption", text: "Tracking a QR Code" },
+      {
+        type: "Video",
+        video: QRTracking_yaw,
+        poster: QRTracking_yaw_poster,
+        loop: true,
+      },
+
       { type: "SectionBreak", color: "#FCF7FF" },
       {
         type: "VariableGridContainer",
