@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-// import { Link } from "gatsby"
 
 import GitHubLogo from "../Images_and_Videos/About/GitHubLogo.png"
 import LinkedInLogo from "../Images_and_Videos/About/LI-Logo.png"
@@ -141,28 +140,6 @@ const FadeInSection = ({ align, children }) => {
     </FadeInContainer>
   )
 }
-// const FadeInSection = props => {
-//   const [isVisible, setVisible] = React.useState(true)
-//   const domRef = React.useRef()
-
-//   React.useEffect(() => {
-//     const observer = new IntersectionObserver(entries => {
-//       entries.forEach(entry => setVisible(entry.isIntersecting))
-//     })
-//     const curDomRef = domRef.current
-//     observer.observe(domRef.current)
-//     return () => observer.unobserve(curDomRef)
-//   }, [])
-//   return (
-//     <FadeInContainer
-//       align={props.align}
-//       className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
-//       ref={domRef}
-//     >
-//       {props.children}
-//     </FadeInContainer>
-//   )
-// }
 
 const aboutData = [
   { type: "PageTitle", text: "About Me", align: "center" },
@@ -170,7 +147,7 @@ const aboutData = [
   {
     type: "Paragraph",
     text:
-      "I am currently a senior at Princeton University earning a degree in Mechanical and Aerospace Engineering.",
+      "I graduated from Princeton University, Class of 2020, earning a degree in Mechanical and Aerospace Engineering and minors in Computer Science and Robotics and Intelligent Systems. I also earned the first place award for best senior thesis and was invited to join the Sigma Xi Honor Society.",
   },
   {
     type: "Paragraph",
