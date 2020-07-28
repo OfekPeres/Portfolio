@@ -83,9 +83,9 @@ const Page = () => {
 
         <ProjectGrid></ProjectGrid>
 
+        <ThesisArticle></ThesisArticle>
         <SarrArticle name="SARR"></SarrArticle>
         <MotionPlanningArticle></MotionPlanningArticle>
-        <ThesisArticle></ThesisArticle>
         <PendulumArticle></PendulumArticle>
         <CraneArticle></CraneArticle>
         <BenchPressArticle></BenchPressArticle>

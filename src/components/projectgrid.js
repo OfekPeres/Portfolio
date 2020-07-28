@@ -27,7 +27,7 @@ const roboticsData = {
   to: "Motion Planning",
 }
 const thesisData = {
-  title: "Autonomous Battery Swap",
+  title: "Everfly - Senior Thesis",
   paragraphs: ["Autonomous Control", "Computer Vision", "Motion Planning"],
   image: qrcode,
   alt: "An image of a QR code",
@@ -65,9 +65,9 @@ const benchpressData = {
   to: "Bench Press",
 }
 const data = [
+  thesisData,
   sarrData,
   roboticsData,
-  thesisData,
   pendulumData,
   craneData,
   benchpressData,
