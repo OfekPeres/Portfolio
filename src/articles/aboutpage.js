@@ -152,7 +152,7 @@ const aboutData = [
   {
     type: "Paragraph",
     text:
-      "My favorite projects are ones where I can combine my software and hardware skills, as a result some of my favorite classes and projects have been related to the field of Robotics. Some of my favorite projects include my senior thesis, Everfly, where I worked in a small team of 4 to successfully build an autonomous battery swapping mechanism for the DJI Tello Edu (a small quadcopter), my Junior year design course where I built and programmed a Search and Rescue Robot to autonomously traverse through an obstacle course, and my senior year robotics course where I designed and tested an algorithm on the CrazyFlie drone to  traverse through a 3 dimensional, randomized obstacle course of hanging pipes.",
+      "My favorite projects are ones where I can combine my software and hardware skills. As a result some, of my favorite classes and projects have been related to the field of Robotics. Some of my favorite projects include my senior thesis, Everfly, where I worked in a small team of 4 to successfully build an autonomous battery swapping mechanism for the DJI Tello Edu (a small quadcopter), my Junior year design course where I built and programmed a Search and Rescue Robot to autonomously traverse through an obstacle course, and my senior year robotics course where I designed and tested an algorithm on the CrazyFlie drone to  traverse through a 3 dimensional, randomized obstacle course of hanging pipes.",
   },
   { type: "SectionBreak" },
   { type: "SubTitle", text: "Employment Opportunities" },
