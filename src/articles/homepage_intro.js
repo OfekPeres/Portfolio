@@ -65,7 +65,7 @@ const StyledGatsbyLink = styled(Link)`
 
 const blurbAboutMeText = "Algorithm & Controls Robotics Developer"
 const aboutMeText =
-  "Welcome to my website! I am a Senior at Princeton University studying Mechanical and Aerospace Engineering, Robotics, and Computer Science. I am very interested in the intersection between hardware and software!"
+  "Welcome to my website! I graduated from Princeton University, Class of 2020, with a degree in Mechanical and Aerospace Engineering and minors in Robotics and Computer Science. I am very interested in the intersection between hardware and software! To learn more about me, click on my name above!"
 const projectsLinkText = "Check out some of my projects here!"
 const workExperienceLinkText = "Check out my work experience here!"
 const HomePageIntro = () => {

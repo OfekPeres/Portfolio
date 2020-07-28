@@ -3,8 +3,8 @@ import Article from "./article"
 
 // import QRTracking_drone from "../Images_and_Videos/Thesis/QRTracking_Drone.mp4"
 // import QRTracking_human from "../Images_and_Videos/Thesis/QRTracking_human.mp4"
-import QRTracking_yaw from "../Images_and_Videos/Thesis/QR_Tracking_Yaw.mp4"
-import QRTracking_yaw_poster from "../Images_and_Videos/Thesis/QR_Tracking_Yaw_poster.png"
+// import QRTracking_yaw from "../Images_and_Videos/Thesis/QR_Tracking_Yaw.mp4"
+// import QRTracking_yaw_poster from "../Images_and_Videos/Thesis/QR_Tracking_Yaw_poster.png"
 
 import EverflyDemo from "../Images_and_Videos/Thesis/EverFlyDemo.mp4"
 import EverFlyDemo_Poster from "../Images_and_Videos/Thesis/EverFlyDemo_Poster.png"
