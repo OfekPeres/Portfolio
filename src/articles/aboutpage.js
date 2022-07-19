@@ -152,7 +152,12 @@ const aboutData = [
   {
     type: "Paragraph",
     text:
-      "My favorite projects are ones where I can combine my software and hardware skills. As a result some, of my favorite classes and projects have been related to the field of Robotics. Some of my favorite projects include my senior thesis, Everfly, where I worked in a small team of 4 to successfully build an autonomous battery swapping mechanism for the DJI Tello Edu (a small quadcopter), my Junior year design course where I built and programmed a Search and Rescue Robot to autonomously traverse through an obstacle course, and my senior year robotics course where I designed and tested an algorithm on the CrazyFlie drone to  traverse through a 3 dimensional, randomized obstacle course of hanging pipes.",
+      "After joining the 'real world' for a year, working as a software engineer at Lockheed Martin, I went back to Princeton to earn a Master of Engineering in Robotics. While earning the degree, I continued to work as a software engineer in a part time capacity. In May of 2022, I successfully graduated with the Masters degree and earned a 3.7 GPA",
+  },
+  {
+    type: "Paragraph",
+    text:
+      "My favorite projects are ones where I can combine my software and hardware skills. As a result, some of my favorite classes and projects have been related to the field of Robotics. Some of my favorite projects include my senior thesis, Everfly, where I worked in a small team of 4 to successfully build an autonomous battery swapping mechanism for the DJI Tello Edu (a small quadcopter), my Junior year design course where I built and programmed a Search and Rescue Robot to autonomously traverse through an obstacle course, and my senior year robotics course where I designed and tested an algorithm on the CrazyFlie drone to  traverse through a 3 dimensional, randomized obstacle course of hanging pipes.",
   },
   { type: "SectionBreak" },
   { type: "SubTitle", text: "Employment Opportunities" },
@@ -188,7 +193,7 @@ const aboutData = [
   {
     type: "Paragraph",
     text:
-      "I also love spike-ball and ultimate frisbee. In New York this past summer I went to Central Park after work to join pick-up games  (or read) almost every day!",
+      "I also love spike-ball and ultimate frisbee, hanging out with friends, cooking, and the beach.",
   },
   { type: "SectionBreak" },
   { type: "SubTitle", text: "About My Website" },

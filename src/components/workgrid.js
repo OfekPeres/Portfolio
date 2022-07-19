@@ -5,7 +5,7 @@ import { Card, CardGrid } from "./card"
 
 // Import images for all cards
 import amazon_logo from "../Images_and_Videos/Amazon/amazon_logo.png"
-
+import lockheed_icon from "../Images_and_Videos/LockheedMartin/lm-icon.jpg"
 import water_droplet from "../Images_and_Videos/Fluids/WaterDroplet.jpg"
 
 const amazonData = {
@@ -24,7 +24,15 @@ const fluidsData = {
   to: "Fluids",
 }
 
-const data = [amazonData, fluidsData]
+const lockheedData = {
+  title: "Lockheed Martin",
+  paragraphs: ["Software Engineer"],
+  image: lockheed_icon,
+  alt: "The lockheed icon",
+  to: "Lockheed",
+}
+
+const data = [lockheedData, amazonData, fluidsData]
 
 const Welcome = styled.h2`
   grid-row: 1;

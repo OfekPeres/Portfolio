@@ -9,6 +9,7 @@ import "../styles/main.css"
 import "../styles/burgermenu.css"
 import WorkGrid from "../components/workgrid"
 import AmazonArticle from "../articles/amazon"
+import LockheedMartinArticle from "../articles/lockheedmartin"
 import FluidsArticle from "../articles/fluids"
 
 import HeaderBar from "../components/header"
@@ -76,6 +77,7 @@ const Page = () => {
         ></HeaderBar>
 
         <WorkGrid></WorkGrid>
+        <LockheedMartinArticle></LockheedMartinArticle>
         <AmazonArticle></AmazonArticle>
         <FluidsArticle></FluidsArticle>
         <UpArrow onClick={scrollToTop}></UpArrow>
