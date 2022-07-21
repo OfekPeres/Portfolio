@@ -176,7 +176,7 @@ const aboutData = [
     to: "https://www.linkedin.com/in/ofekperes/",
     alt: "LinkedIn logo",
     align: "center",
-    width: "50%",
+    width: "40%",
     height: "100%",
   },
   { type: "SectionBreak" },

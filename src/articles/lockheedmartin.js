@@ -1,7 +1,5 @@
 import React from "react"
 import Article from "./article"
-import react_logo from "../Images_and_Videos/Amazon/react_logo.png"
-import aws_certified_logo from "../Images_and_Videos/Amazon/aws-certified-logo.png"
 import lockheed_logo from "../Images_and_Videos/LockheedMartin/lm-logo.png"
 const lockheedArticle = {
   metadata: {

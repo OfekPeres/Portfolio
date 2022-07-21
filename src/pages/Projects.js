@@ -8,9 +8,12 @@ import GlobalLayout from "../components/global_layout"
 import "../styles/main.css"
 import "../styles/burgermenu.css"
 import ProjectGrid from "../components/projectgrid"
+
+import ThesisArticle from "../articles/thesis"
+import RoboticsSandboxArticle from "../articles/roboticssandbox"
+import WordGameHelperArticle from "../articles/wordgamehelper"
 import SarrArticle from "../articles/sarr"
 import MotionPlanningArticle from "../articles/motionplanning"
-import ThesisArticle from "../articles/thesis"
 import PendulumArticle from "../articles/pendulum"
 import CraneArticle from "../articles/crane"
 import BenchPressArticle from "../articles/benchpress"
@@ -84,6 +87,8 @@ const Page = () => {
         <ProjectGrid></ProjectGrid>
 
         <ThesisArticle></ThesisArticle>
+        <RoboticsSandboxArticle></RoboticsSandboxArticle>
+        <WordGameHelperArticle></WordGameHelperArticle>
         <SarrArticle name="SARR"></SarrArticle>
         <MotionPlanningArticle></MotionPlanningArticle>
         <PendulumArticle></PendulumArticle>

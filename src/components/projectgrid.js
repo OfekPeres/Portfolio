@@ -9,6 +9,8 @@ import qrcode from "../Images_and_Videos/Thesis/QRCodeBlack.png"
 import pendulum from "../Images_and_Videos/Inverted_Pendulum/pendulum_logo.png"
 import crane from "../Images_and_Videos/Crane/CraneLogo.png"
 import benchpress from "../Images_and_Videos/BenchPress/benchpresscard.png"
+import dubins_car from "../Images_and_Videos/ControlsVisualization/dubins_car.png"
+import word_game_helper from "../Images_and_Videos/WordGameHelper/word_game_helper.png"
 
 const sarrData = {
   title: "Search and Rescue Robot",
@@ -64,8 +66,26 @@ const benchpressData = {
   alt: "An olympic bench press engineering drawing",
   to: "Bench Press",
 }
+
+const roboticsSandboxData = {
+  title: "Robotics Simulation Sandbox",
+  paragraphs: [],
+  image: dubins_car,
+  alt: "An image of dubins car.",
+  to: "roboticsSandbox",
+}
+
+const wordGameHelperData = {
+  title: "Word Game Helper",
+  paragraphs: [],
+  image: word_game_helper,
+  alt: "The UI for my word game helper app",
+  to: "wordGameHelper",
+}
 const data = [
   thesisData,
+  roboticsSandboxData,
+  wordGameHelperData,
   sarrData,
   roboticsData,
   pendulumData,
