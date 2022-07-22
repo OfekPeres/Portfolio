@@ -33,7 +33,7 @@ const Intro = styled.article`
   @media screen and (max-width: 600px) {
     grid-template-columns: 1fr 3fr 3fr 1fr;
   }
-  height: 100vh;
+  min-height: 100vh;
   /* max-height: 100vh; */
 `
 

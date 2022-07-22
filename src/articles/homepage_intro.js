@@ -55,12 +55,7 @@ const StyledGatsbyLink = styled(Link)`
   justify-self: ${({ left }) => (left ? "start" : "end")};
 
   width: 85%;
-  /* margin-bottom: 40px; */
-  position: relative;
-  top: -70%;
-  @media screen and (max-width: 350px) {
-    top: -10px;
-  }
+  /* margin-top: 20px; */
 `
 
 const blurbAboutMeText = "Algorithm & Controls Robotics Developer"
@@ -76,7 +71,7 @@ const HomePageIntro = () => {
       </Name>
       <BlurbAboutMe>{blurbAboutMeText}</BlurbAboutMe>
       <AboutMe>{aboutMeText}</AboutMe>
-      <StyledGatsbyLink left column={2} to={"/Projects"}>
+      <StyledGatsbyLink left={"true"} column={2} to={"/Projects"}>
         {projectsLinkText}
       </StyledGatsbyLink>
       <StyledGatsbyLink column={3} to={"/WorkExperience"}>
