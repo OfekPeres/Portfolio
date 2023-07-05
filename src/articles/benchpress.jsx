@@ -16,8 +16,7 @@ const benchpressArticle = {
   },
   ArticleBody: {
     SectionBlurb: {
-      text:
-        "Designed an olympic bench press capable of withstanding weights up to 550 pounds. Developed clean, detailed engineering drawings as well as Cad skills",
+      text: "Designed an olympic bench press capable of withstanding weights up to 550 pounds. Developed clean, detailed engineering drawings as well as Cad skills",
     },
     Entries: [
       { type: "SectionBreak" },
@@ -34,18 +33,19 @@ const benchpressArticle = {
 
       {
         type: "SectionEntry",
-        text:
-          "The above figure is the displacement analysis when a 550 pound force is applied at the center of mass. The deflection, measured in inches, was significantly less than an inch, even in the worst case.",
+        text: "The above figure is the displacement analysis when a 550 pound force is applied at the center of mass. The deflection, measured in inches, was significantly less than an inch, even in the worst case.",
       },
       { type: "SectionBreak" },
     ],
   },
 }
 
-export default () => (
+const BenchpressArticle = () => (
   <Article
     metadata={benchpressArticle.metadata}
     SectionHeaderData={benchpressArticle.SectionHeader}
     ArticleBodyData={benchpressArticle.ArticleBody}
   ></Article>
 )
+
+export default BenchpressArticle

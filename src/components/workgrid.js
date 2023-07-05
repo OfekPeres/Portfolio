@@ -66,4 +66,5 @@ const ProjectGrid = ({ inputs }) => {
   )
 }
 
-export default () => <ProjectGrid inputs={data}></ProjectGrid>
+const ProjectGridFilled = () => <ProjectGrid inputs={data}></ProjectGrid>
+export default ProjectGridFilled

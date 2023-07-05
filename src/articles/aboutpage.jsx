@@ -6,7 +6,7 @@ import LinkedInLogo from "../Images_and_Videos/About/LI-Logo.png"
 import "../styles/fadein.css"
 
 import "animate.css/animate.min.css"
-import ScrollAnimation from "react-animate-on-scroll"
+// import ScrollAnimation from "react-animate-on-scroll"
 
 const Body = styled.body`
   display: grid;
@@ -125,7 +125,8 @@ const LinkedLogo = ({ logo, to, alt, align, width, rowStart, height }) => {
 //   justify-content: left;
 //   align-items: left;
 // `
-const FadeInContainer = styled(ScrollAnimation)`
+// TODO: Add fade in Scrolling
+const FadeInContainer = styled.div`
   grid-column: 2;
   justify-self: ${({ align }) => (align !== null ? align : "flex-start")};
   display: grid;
@@ -146,25 +147,21 @@ const aboutData = [
   { type: "SubTitle", text: "Academics" },
   {
     type: "Paragraph",
-    text:
-      "I graduated from Princeton University, Class of 2020, earning a degree in Mechanical and Aerospace Engineering and minors in Computer Science and Robotics and Intelligent Systems. I also earned the first place award for best senior thesis and was invited to join the Sigma Xi Honor Society.",
+    text: "I graduated from Princeton University, Class of 2020, earning a degree in Mechanical and Aerospace Engineering and minors in Computer Science and Robotics and Intelligent Systems. I also earned the first place award for best senior thesis and was invited to join the Sigma Xi Honor Society.",
   },
   {
     type: "Paragraph",
-    text:
-      "After joining the 'real world' for a year, working as a software engineer at Lockheed Martin, I went back to Princeton to earn a Master of Engineering in Robotics. While earning the degree, I continued to work as a software engineer in a part time capacity. In May of 2022, I successfully graduated with the Masters degree and earned a 3.7 GPA",
+    text: "After joining the 'real world' for a year, working as a software engineer at Lockheed Martin, I went back to Princeton to earn a Master of Engineering in Robotics. While earning the degree, I continued to work as a software engineer in a part time capacity. In May of 2022, I successfully graduated with the Masters degree and earned a 3.7 GPA",
   },
   {
     type: "Paragraph",
-    text:
-      "My favorite projects are ones where I can combine my software and hardware skills. As a result, some of my favorite classes and projects have been related to the field of Robotics. Some of my favorite projects include my senior thesis, Everfly, where I worked in a small team of 4 to successfully build an autonomous battery swapping mechanism for the DJI Tello Edu (a small quadcopter), my Junior year design course where I built and programmed a Search and Rescue Robot to autonomously traverse through an obstacle course, and my senior year robotics course where I designed and tested an algorithm on the CrazyFlie drone to  traverse through a 3 dimensional, randomized obstacle course of hanging pipes.",
+    text: "My favorite projects are ones where I can combine my software and hardware skills. As a result, some of my favorite classes and projects have been related to the field of Robotics. A few examples include my senior thesis, Everfly, where I worked in a small team of 4 to successfully build an autonomous battery swapping mechanism for the DJI Tello Edu (a small quadcopter), my Junior year design course where I built and programmed a Search and Rescue Robot to autonomously traverse through an obstacle course, and my senior year robotics course where I designed and tested an algorithm on the CrazyFlie drone to  traverse through a 3 dimensional, randomized obstacle course of hanging pipes.",
   },
   { type: "SectionBreak" },
   { type: "SubTitle", text: "Employment Opportunities" },
   {
     type: "Paragraph",
-    text:
-      "I am currently actively recruiting for full time opportunities in Robotics, Software Engineering, and Mechanical/Aerospace Engineering. ",
+    text: "I am currently actively recruiting for full time opportunities in Robotics, Software Engineering, and Mechanical/Aerospace Engineering. ",
   },
   {
     type: "Paragraph",
@@ -187,20 +184,17 @@ const aboutData = [
   },
   {
     type: "Paragraph",
-    text:
-      "But actually, I am an avid reader – I love science fiction and fantasy books. Most of the time spent on my phone is reading on the Kindle app.",
+    text: "But actually, I am an avid reader – I love science fiction and fantasy books. Most of the time spent on my phone is reading on the Kindle app.",
   },
   {
     type: "Paragraph",
-    text:
-      "I also love spike-ball and ultimate frisbee, hanging out with friends, cooking, and the beach.",
+    text: "I also love spike-ball and ultimate frisbee, hanging out with friends, cooking, and the beach.",
   },
   { type: "SectionBreak" },
   { type: "SubTitle", text: "About My Website" },
   {
     type: "Paragraph",
-    text:
-      "I designed my website together with my sister, Adi, using Adobe XD and Procreate.",
+    text: "I designed my website together with my sister, Adi, using Adobe XD and Procreate.",
   },
   {
     type: "Paragraph",
@@ -218,8 +212,7 @@ const aboutData = [
   },
   {
     type: "Paragraph",
-    text:
-      "One of the main reasons I wanted to build my own website was so that I could display some of my projects in a more organic way, showcasing my talents in a different light than my resume.",
+    text: "One of the main reasons I wanted to build my own website was so that I could display some of my projects in a more organic way, showcasing my talents in a different light than my resume.",
   },
   { type: "SectionBreak" },
   { type: "Title", text: "Thank you for visiting!!" },
@@ -280,6 +273,7 @@ const About = ({ pageInputs }) => {
   return <Body>{entries}</Body>
 }
 
-export default () => {
+const AboutPage = () => {
   return <About pageInputs={aboutData}></About>
 }
+export default AboutPage

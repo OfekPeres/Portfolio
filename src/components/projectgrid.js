@@ -11,6 +11,7 @@ import crane from "../Images_and_Videos/Crane/CraneLogo.png"
 import benchpress from "../Images_and_Videos/BenchPress/benchpresscard.png"
 import dubins_car from "../Images_and_Videos/ControlsVisualization/dubins_car.png"
 import word_game_helper from "../Images_and_Videos/WordGameHelper/word_game_helper.png"
+import infinite_runner from "../Images_and_Videos/InfiniteRunner/InfiniteRunner.png"
 
 const sarrData = {
   title: "Search and Rescue Robot",
@@ -24,8 +25,7 @@ const roboticsData = {
   image: astar_cover,
   paragraphs: [],
   title: "Motion Planning & Localization",
-  alt:
-    "An image of the A-star algorithm finding an optimal path thru an obstacle course.",
+  alt: "An image of the A-star algorithm finding an optimal path thru an obstacle course.",
   to: "Motion Planning",
 }
 const thesisData = {
@@ -58,7 +58,7 @@ const craneData = {
 const benchpressData = {
   title: "Olympic Bench Press",
   paragraphs: [
-    " Finite Element Analysis",
+    "Finite Element Analysis",
     "Engineering Drawings",
     "3D Modeling (CAD)",
   ],
@@ -82,12 +82,21 @@ const wordGameHelperData = {
   alt: "The UI for my word game helper app",
   to: "wordGameHelper",
 }
+
+const infiniteRunnerGameData = {
+  title: "Infinite Runner 3D Game",
+  paragraphs: [],
+  image: infinite_runner,
+  alt: "A 3D Infinite running game with a theme inspired by a song of ice and fire",
+  to: "infiniteRunner",
+}
 const data = [
   thesisData,
   roboticsSandboxData,
   wordGameHelperData,
   sarrData,
   roboticsData,
+  infiniteRunnerGameData,
   pendulumData,
   craneData,
   benchpressData,
@@ -125,4 +134,6 @@ const ProjectGrid = ({ inputs }) => {
 }
 
 export { ProjectGrid, data }
-export default () => <ProjectGrid inputs={data}></ProjectGrid>
+
+const ProjectGridFilled = () => <ProjectGrid inputs={data}></ProjectGrid>
+export default ProjectGridFilled

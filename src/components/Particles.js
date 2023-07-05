@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useCallback } from "react"
 import styled from "styled-components"
-import Particles from "react-particles-js"
+import Particles from "react-particles"
+import { loadFull } from "tsparticles"
 
 const ParticleContainer = styled.div`
-  background-color: #0b0222;
+  /* width: 100vw; */
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   @media screen and (max-width: 480px) {
@@ -12,14 +13,15 @@ const ParticleContainer = styled.div`
 `
 
 const ParticleParamsSimple = {
-  // particles: {
-  //   number: {
-  //     value: 120,
-  //   },
-  //   size: {
-  //     value: 1,
-  //   },
-  // },
+  background: {
+    color: {
+      value: "#0b0222",
+    },
+  },
+  fullScreen: {
+    enable: true,
+    zIndex: 0,
+  },
   particles: {
     number: {
       value: 20,
@@ -43,6 +45,7 @@ const ParticleParamsSimple = {
       speed: 3,
       // direction: "top",
       out_mode: "out",
+      enable: true,
     },
   },
   interactivity: {
@@ -62,6 +65,11 @@ const ParticleParamsSimple = {
 }
 
 const ParticleParamsBubbles = {
+  background: {
+    color: {
+      value: "#0b0222",
+    },
+  },
   particles: {
     number: {
       value: 160,
@@ -85,6 +93,7 @@ const ParticleParamsBubbles = {
       speed: 3,
       direction: "top",
       out_mode: "out",
+      enable: true,
     },
   },
   interactivity: {
@@ -114,16 +123,31 @@ const ParticleParamsBubbles = {
 }
 
 const ParticlesBackground = ({ ParticleParams }) => {
+  const particlesInit = useCallback(async (engine) => {
+    console.log(engine)
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine)
+  }, [])
+
+  const particlesLoaded = useCallback(async (container) => {
+    await console.log(container)
+  }, [])
   return (
     <ParticleContainer>
-      <Particles height="100vh" params={ParticleParams} />
+      <Particles
+        height="100vh"
+        options={ParticleParams}
+        init={particlesInit}
+        loaded={particlesLoaded}
+      />
     </ParticleContainer>
   )
 }
 
 const OfekParticles = ({ simple }) => {
   let params = simple ? ParticleParamsSimple : ParticleParamsBubbles
-
   return <ParticlesBackground ParticleParams={params}></ParticlesBackground>
 }
 export default OfekParticles

@@ -13,13 +13,14 @@ const StyledLink = styled(Link)`
     color: skyblue;
   }
 `
-export default ({ isOpen, handleStateChange, closeMenu }) => {
+
+const SideBar = ({ isOpen, handleStateChange, closeMenu }) => {
   return (
     <Menu
       isOpen={isOpen}
       customBurgerIcon={false}
       customCrossIcon={false}
-      onStateChange={state => handleStateChange(state)}
+      onStateChange={(state) => handleStateChange(state)}
       pageWrapId={"main-content"}
       outerContainerId={"outer-container"}
       disableAutoFocus
@@ -42,3 +43,5 @@ export default ({ isOpen, handleStateChange, closeMenu }) => {
     </Menu>
   )
 }
+
+export default SideBar

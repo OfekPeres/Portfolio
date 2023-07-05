@@ -17,6 +17,7 @@ import MotionPlanningArticle from "../articles/motionplanning"
 import PendulumArticle from "../articles/pendulum"
 import CraneArticle from "../articles/crane"
 import BenchPressArticle from "../articles/benchpress"
+import InfiniteRunner from "../articles/infiniterunner"
 
 import HeaderBar from "../components/header"
 import Footer from "../components/footer"
@@ -36,7 +37,7 @@ const Page = () => {
     scroll.scrollToTop()
   }
 
-  const handleStateChange = state => {
+  const handleStateChange = (state) => {
     setState({ ...state, menuOpen: state.isOpen })
   }
   const closeMenu = () => {
@@ -49,11 +50,11 @@ const Page = () => {
   }
 
   useEffect(() => {
-    Events.scrollEvent.register("begin", function(to, element) {
+    Events.scrollEvent.register("begin", function (to, element) {
       // console.log("begin", arguments)
     })
 
-    Events.scrollEvent.register("end", function(to, element) {
+    Events.scrollEvent.register("end", function (to, element) {
       // console.log("end", arguments)
     })
 
@@ -91,6 +92,7 @@ const Page = () => {
         <WordGameHelperArticle></WordGameHelperArticle>
         <SarrArticle name="SARR"></SarrArticle>
         <MotionPlanningArticle></MotionPlanningArticle>
+        <InfiniteRunner />
         <PendulumArticle></PendulumArticle>
         <CraneArticle></CraneArticle>
         <BenchPressArticle></BenchPressArticle>

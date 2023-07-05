@@ -1,3 +1,5 @@
 import React from "react"
 import "../styles/main.css"
-export default ({ children }) => <div>{children}</div>
+
+const GlobalLayout = ({ children }) => <div>{children}</div>
+export default GlobalLayout

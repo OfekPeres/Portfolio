@@ -16,21 +16,18 @@ const amazonArticle = {
   },
   ArticleBody: {
     SectionBlurb: {
-      text:
-        "During Summer 2019 I worked at amazon web services as a solutions architect intern.",
+      text: "During Summer 2019 I worked at amazon web services as a solutions architect intern.",
     },
     Entries: [
       { type: "SectionBreak", color: "#EFA10B" },
       { type: "SectionSubTitle", text: "What I learned" },
       {
         type: "SectionEntry",
-        text:
-          "Throughout my internship, I worked with the Automated Architectural Guidance team. To better help the team, I learned javascript and react to assist with the development of a tool to help automatically create guided conversations for self help with AWS tools.",
+        text: "Throughout my internship, I worked with the Automated Architectural Guidance team. To better help the team, I learned javascript and react to assist with the development of a tool to help automatically create guided conversations for self help with AWS tools.",
       },
       {
         type: "SectionEntry",
-        text:
-          "I also earned the Associate Solutions Architect certification! Check out my validation by clicking the logo below!",
+        text: "I also earned the Associate Solutions Architect certification! Check out my validation by clicking the logo below!",
       },
 
       {
@@ -52,10 +49,12 @@ const amazonArticle = {
   },
 }
 
-export default () => (
+const AmazonInternshipArticle = () => (
   <Article
     metadata={amazonArticle.metadata}
     SectionHeaderData={amazonArticle.SectionHeader}
     ArticleBodyData={amazonArticle.ArticleBody}
   ></Article>
 )
+
+export default AmazonInternshipArticle

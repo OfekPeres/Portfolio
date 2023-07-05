@@ -15,8 +15,7 @@ const pendulumArticle = {
   },
   ArticleBody: {
     SectionBlurb: {
-      text:
-        "Utilized Matlab, Simulink, and a Quanser board to implement a Linear Quadratic Regulator (LQR) to balance a rotary inverted pendulum that was robust to disturbances.",
+      text: "Utilized Matlab, Simulink, and a Quanser board to implement a Linear Quadratic Regulator (LQR) to balance a rotary inverted pendulum that was robust to disturbances.",
     },
     Entries: [
       { type: "SectionBreak", color: "#FCF7FF" },
@@ -27,10 +26,12 @@ const pendulumArticle = {
   },
 }
 
-export default () => (
+const PendulumArticle = () => (
   <Article
     metadata={pendulumArticle.metadata}
     SectionHeaderData={pendulumArticle.SectionHeader}
     ArticleBodyData={pendulumArticle.ArticleBody}
   ></Article>
 )
+
+export default PendulumArticle

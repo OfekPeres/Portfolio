@@ -2,4 +2,6 @@
 
 ### A note to future self
 
-Remember to use node version 14.20.0
+### TODO: Fix React Particles or create my own background animations using P5js
+
+### TODO: Fix React animate on scroll for about page

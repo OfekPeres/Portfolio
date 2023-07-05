@@ -52,12 +52,11 @@ const Page = () => {
         <meta charSet="utf-8" />
         <title>Ofek's Website - Home</title>
       </Helmet>
-
       <Main>
         <CoverPageTitle className="loading">Launching...</CoverPageTitle>
         <Nudge>Learn More Below!</Nudge>
 
-        <OfekParticles simple={false}></OfekParticles>
+        <OfekParticles></OfekParticles>
         <SpaceShip></SpaceShip>
         <Astronaut></Astronaut>
         <Earth></Earth>

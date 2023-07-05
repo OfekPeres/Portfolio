@@ -126,10 +126,10 @@ const ImageCaption = styled.p`
 const SectionBreak = styled.div`
   grid-column: 2;
   grid-row: ${({ rowStart }) => (rowStart !== null ? rowStart : "auto")};
-  height:1px;
-  border: 1.0px black solid;
+  height: 1px;
+  border: 1px black solid;
   /* border-width: 1.5px;
-  border-color: ${color => (color !== null ? color : "black")};
+  border-color: ${(color) => (color !== null ? color : "black")};
   border-style: solid; */
   border-color: ${({ color }) => (color !== null ? color : "black")};
   width: 20%;
@@ -152,13 +152,11 @@ const ImageStyle = styled.div`
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  height:100%;
+  height: 100%;
   /* width:100%; */
-  align-items:flex-start;
+  align-items: flex-start;
 
   transform: ${({ right }) => (right ? "rotate(90deg)" : "none")};
-
-  
 `
 const BeforeCraneCaption = styled.h4`
   /* grid-column: 2;
@@ -292,7 +290,13 @@ const Video = ({ video, poster, rowStart, loop }) => {
             // muted
             // playsInline
             loop={loop}
-          ></video>
+          >
+            <track
+              kind="captions"
+              srcLang="en"
+              label="english_captions"
+            ></track>
+          </video>
         </VideoItem>
       </VideoAspectRatioContainer>
     </VideoContainer>
@@ -385,7 +389,7 @@ const Article = ({ metadata, SectionHeaderData, ArticleBodyData }) => {
                   text-decoration: underline;
                 }
               `
-              const output = entry.links.map(link => {
+              const output = entry.links.map((link) => {
                 return (
                   <LinkContainer>
                     <ScrollLink to={link.to}>{link.text}</ScrollLink>

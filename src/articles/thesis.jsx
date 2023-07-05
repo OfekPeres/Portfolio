@@ -25,25 +25,21 @@ const thesisArticle = {
   },
   ArticleBody: {
     SectionBlurb: {
-      text:
-        "For my senior thesis I worked in a small team to build a fully autonomous battery swapping mechanism for drones. Inspired by mid-flight refueling and aircraft carriers, we addressed one of the largest problems for lightweight drones: short flight-times.",
+      text: "For my senior thesis I worked in a small team to build a fully autonomous battery swapping mechanism for drones. Inspired by mid-flight refueling and aircraft carriers, we addressed one of the largest problems for lightweight drones: short flight-times.",
     },
     Entries: [
       { type: "SectionBreak", color: "#FCF7FF" },
       {
         type: "SectionEntry",
-        text:
-          "For the project to succeed, two vital components were accomplished in parallel. The first component was the development of a control system for the DJI Tello Edu. The Tello was chosen for its ability to fly indoors, crucial for winter testing, as well as its programability in python.",
+        text: "For the project to succeed, two vital components were accomplished in parallel. The first component was the development of a control system for the DJI Tello Edu. The Tello was chosen for its ability to fly indoors, crucial for winter testing, as well as its programability in python.",
       },
       {
         type: "SectionEntry",
-        text:
-          "The second component developed was the battery swapping mechanism. Our goal was to build a fully autonomous swapping mechanism that required minimal modifications to the Tello to function.",
+        text: "The second component developed was the battery swapping mechanism. Our goal was to build a fully autonomous swapping mechanism that required minimal modifications to the Tello to function.",
       },
       {
         type: "SectionEntry",
-        text:
-          "My chief responsibilities throughout the project were the Guidance Navigation and Control (GNC) system for the drone as well as the control systems for the various moving parts. In addition, I worked together with my teamates on the design and analysis of Everfly and its many components.",
+        text: "My chief responsibilities throughout the project were the Guidance Navigation and Control (GNC) system for the drone as well as the control systems for the various moving parts. In addition, I worked together with my teamates on the design and analysis of Everfly and its many components.",
       },
       { type: "SectionBreak", color: "#FCF7FF" },
       {
@@ -64,8 +60,7 @@ const thesisArticle = {
       },
       {
         type: "SectionEntry",
-        text:
-          "Overall, Everfly was a resounding success. My team won the first place award for best thesis and we were all inducted into the Sigma Xi Honor Society. If you would like to read Everfly's full report, you can find it below.",
+        text: "Overall, Everfly was a resounding success. My team won the first place award for best thesis and we were all inducted into the Sigma Xi Honor Society. If you would like to read Everfly's full report, you can find it below.",
       },
       {
         type: "SectionEntry",
@@ -98,10 +93,12 @@ const thesisArticle = {
   },
 }
 
-export default () => (
+const ThesisArticle = () => (
   <Article
     metadata={thesisArticle.metadata}
     SectionHeaderData={thesisArticle.SectionHeader}
     ArticleBodyData={thesisArticle.ArticleBody}
   ></Article>
 )
+
+export default ThesisArticle

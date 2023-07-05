@@ -26,6 +26,7 @@ const BlurbAboutMe = styled.h2`
   grid-row: 2;
   grid-column: 2 / 4;
   color: #fcf7ff;
+  z-index: 10;
 `
 const AboutMe = styled.p`
   font-family: "Raleway", serif;
@@ -35,6 +36,7 @@ const AboutMe = styled.p`
   font-size: calc(0.55vw + 15px);
   color: #fcf7ff;
   text-align: center;
+  z-index: 10;
 `
 
 const StyledGatsbyLink = styled(Link)`
