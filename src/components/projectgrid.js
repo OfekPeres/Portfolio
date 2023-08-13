@@ -12,6 +12,7 @@ import benchpress from "../Images_and_Videos/BenchPress/benchpresscard.png"
 import dubins_car from "../Images_and_Videos/ControlsVisualization/dubins_car.png"
 import word_game_helper from "../Images_and_Videos/WordGameHelper/word_game_helper.png"
 import infinite_runner from "../Images_and_Videos/InfiniteRunner/InfiniteRunner.png"
+import qrcode_generator from "../Images_and_Videos/QRCodeGenerator/qrcodegenerator.png"
 
 const sarrData = {
   title: "Search and Rescue Robot",
@@ -90,11 +91,21 @@ const infiniteRunnerGameData = {
   alt: "A 3D Infinite running game with a theme inspired by a song of ice and fire",
   to: "infiniteRunner",
 }
+
+const qrCodeGeneratorData = {
+  title: "QR Code Generator",
+  paragraphs: ["Deployed to CloudFlare"],
+  image: qrcode_generator,
+  alt: "A QR Code Generator Application Deployed to CloudFlare",
+  to: "qrcodegenerator",
+}
+
 const data = [
   thesisData,
   roboticsSandboxData,
   wordGameHelperData,
   sarrData,
+  qrCodeGeneratorData,
   roboticsData,
   infiniteRunnerGameData,
   pendulumData,

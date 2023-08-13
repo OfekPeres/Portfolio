@@ -25,6 +25,7 @@ import SideBar from "../components/sidebar"
 
 import UpArrow from "../components/upArrow"
 import Logo from "../components/logo"
+import QRCodeGeneratorArticle from "../articles/qrcodegenerator"
 
 const Main = styled.main``
 const currentPage = { name: "Projects", link: "/Projects" }
@@ -91,6 +92,7 @@ const Page = () => {
         <RoboticsSandboxArticle></RoboticsSandboxArticle>
         <WordGameHelperArticle></WordGameHelperArticle>
         <SarrArticle name="SARR"></SarrArticle>
+        <QRCodeGeneratorArticle></QRCodeGeneratorArticle>
         <MotionPlanningArticle></MotionPlanningArticle>
         <InfiniteRunner />
         <PendulumArticle></PendulumArticle>

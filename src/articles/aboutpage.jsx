@@ -161,7 +161,7 @@ const aboutData = [
   { type: "SubTitle", text: "Employment Opportunities" },
   {
     type: "Paragraph",
-    text: "I am currently actively recruiting for full time opportunities in Robotics, Software Engineering, and Mechanical/Aerospace Engineering. ",
+    text: "I love hearing about what's new in tech - connect with me on LinkedIn to chat!",
   },
   {
     type: "Paragraph",
